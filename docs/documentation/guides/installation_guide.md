@@ -83,7 +83,7 @@ The following table covers system requirements for installing and running OpenL 
 | Operating systems | One of the following: <br/>• Microsoft Windows 7+ x86/64 <br/>• Ubuntu 12.x <br/>• Linux 3.x <br/>Note: OpenL Tablets software can potentially run on any operating system that supports Java Virtual Machine, for example, Mac OS. <br/>This table lists operating systems on which the OpenL Tablets software is tested and supported. |
 | Browsers          | One of the following: <br/>• Microsoft Internet Explorer 11.x <br/>• Firefox 60 ESR or later <br/>• Chrome 73+                                                                                                                                                                                                                     |
 | Data Bases        | One of the following: <br/>• MySQL 5.5+ <br/>• MariaDB 10.2+ <br/>• MS SQL Server 2008+ <br/>• Oracle 11g + <br/>• PostgreSQL 9.5+                                                                                                                                                                                                               |
-| Other software    | <br/>Java v8/11/12 x86/64  <br/>Apache Tomcat 7, 8.5, 9 <br/>WebSphere Application Server 8.5 <br/>JBoss EAP 7.1                                                                                                                                                                                                                  |
+| Other software    | <br/>Java v8/11/12 x86/64  <br/>Apache Tomcat 8.5, 9 <br/>WebSphere Application Server 8.5 <br/>JBoss EAP 7.3                                                                                                                                                                                                                  |
 
 **Hardware requirements:** RAM 4 GB minimum. 6 GB is recommended. 1 GHz or faster 32-bit (x86) or 64-bit (x64) processor.
 
@@ -245,7 +245,7 @@ This section describes how to install Apache Tomcat on Windows and includes the 
 
 ##### Installing Apache Tomcat from Zip File
 
-To install Apache Tomcat 7.0.x or later, proceed as follows:
+To install Apache Tomcat 9.0.x, proceed as follows:
 
 1.  Open Apache Tomcat home page at <http://tomcat.apache.org/index.html>.
 2.  In the left-hand **Download** menu, click the latest available Tomcat version.
@@ -255,7 +255,7 @@ To install Apache Tomcat 7.0.x or later, proceed as follows:
 
 	This folder is referred to as `<TOMCAT_HOME> `further in this document.
 
-1.  For Tomcat web server 7.0, to configure JVM options, open the `TOMCAT_HOME/conf/server.xml `file and add the `URIEncoding="UTF-8"` attribute for all `<Connector>` elements.
+1.  For Tomcat web server 9.0, to configure JVM options, open the `TOMCAT_HOME/conf/server.xml `file and add the `URIEncoding="UTF-8"` attribute for all `<Connector>` elements.
 
 	For example:
 
@@ -276,7 +276,7 @@ This section describes how to install Apache Tomcat using Windows Service Instal
 Proceed as follows:
 
 1.  Navigate to the Apache Tomcat site at <http://tomcat.apache.org/index.html> and in the left-hand **Download** menu, click the latest available Tomcat version.
-2.  Locate the **Binary Distributions** area and in the **Core** list, click the [32-bit/64-bit Windows Service Installer](http://www.sai.msu.su/apache/tomcat/tomcat-7/v7.0.29/bin/apache-tomcat-7.0.29.exe) link.
+2.  Locate the **Binary Distributions** area and in the **Core** list, click the [32-bit/64-bit Windows Service Installer](https://tomcat.apache.org/download-90.cgi) link.
 
 	Save the apache-tomcat exe file in a temporary folder.
 
@@ -297,7 +297,7 @@ Proceed as follows:
 
 	As a result, Apache Tomcat is installed and started on the user’s computer. In the **Notification Area** located next to the clock, the ![](installation_guide_images/3cb496a7a506c9a316dd860933a62610.png) icon appears. Tomcat is managed by using this icon or from the **Start** menu.
 
-1.  To configure JVM options for Tomcat, in the **Notification** area, right click the **Apache Tomcat** icon and select **Configure;** or click **Start \> All Programs \> Apache Tomcat 7.0 \> Configure Tomcat**.
+1.  To configure JVM options for Tomcat, in the **Notification** area, right click the **Apache Tomcat** icon and select **Configure;** or click **Start \> All Programs \> Apache Tomcat 9.0 \> Configure Tomcat**.
 
 	The Apache Tomcat Properties dialog appears.
 
@@ -319,7 +319,7 @@ Proceed as follows:
 
 1.  Select **Start Service**.
 
-	Alternatively, Tomcat can be restarted from the **General** tab in the **Apache Tomcat Properties** window which appears after selecting **Start \> All Programs \> Apache Tomcat 7.0 \> Configure Tomcat**.
+	Alternatively, Tomcat can be restarted from the **General** tab in the **Apache Tomcat Properties** window which appears after selecting **Start \> All Programs \> Apache Tomcat 9.0 \> Configure Tomcat**.
 
 From this point, OpenL Tablets WebStudio can be run as described in [Deploying OpenL Tablets WebStudio](#deploying-openl-tablets-webstudio).
 
@@ -374,27 +374,27 @@ This section describes how to install Apache Tomcat on Ubuntu 12.04 and Centos 6
 
 Proceed as follows:
 
-1.  Download the appropriate Tomcat archive file, ZIP or `tar.gz` archive, from its official website <http://tomcat.apache.org/download-70.cgi> to the required user folder.
+1.  Download the appropriate Tomcat archive file, ZIP or `tar.gz` archive, from its official website <http://tomcat.apache.org/download-90.cgi> to the required user folder.
 
-	In this example, Tomcat 7.0.39 is downloaded to the `/home/myuser `folder.
+	In this example, Tomcat 9.0.39 is downloaded to the `/home/myuser `folder.
 
 1.  Open a terminal window and change directory to the folder containing the Tomcat archive.
 2.  Extract the archive by entering the following command in the terminal, modifying the Tomcat version as required:
 
 	```
-	tar -zxvf apache-tomcat-7.0.39.tar.gz
+	tar -zxvf apache-tomcat-9.0.39.tar.gz
 	```
 
-	The `apache-tomcat-7.0.39 `folder appears. For example:
+	The `apache-tomcat-9.0.39 `folder appears. For example:
 
 	```
-	/home/myuser/apache-tomcat-7.0.39
+	/home/myuser/apache-tomcat-9.0.39
 	```
 
 1.  Change directory to the `tomcat/bin`:
 
 	```
-	cd apache-tomcat-7.0.39/bin
+	cd apache-tomcat-9.0.39/bin
 	```
 
 1.  Make sure all `*.sh` files are executable, that is, they have `r` in all positions to the left of the file name, for example, `-rwxr-xr-x`.
