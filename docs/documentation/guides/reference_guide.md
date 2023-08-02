@@ -587,7 +587,7 @@ External condition/return/action title must exactly match the title of the condi
 
 The external element table structure is as follows:
 
-1.  The first row is the header containing the keyword, such as **Actions**, **Conditions**, or **Return**, and optionally the name of the table.
+1.  The first row is the header containing the keyword, such as **Actions**, **Conditions**, or **Returns**, and optionally the name of the table.
 2.  The first column under the header contains keyword, such as **Inputs**, **Expression**, **Parameter**, and **Title.**
 3.  Every column, starting from the second one, represents the element, that is, condition, action, and return definition.
     
