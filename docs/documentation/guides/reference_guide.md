@@ -850,6 +850,8 @@ Two-dimensional arrays can be used in rules tables, where mixing values and expr
 
 ![](ref_guide_images/2ca6c0bc1a0c1c1d20d42502bbff6d89.png)
 
+
+
 *Using two-dimensional arrays in a rules table*
 
 ###### Representing Date Values
@@ -2867,7 +2869,107 @@ The **Dev** group properties are listed in the following table:
 | Auto Type Discovery     | autoType                       | Boolean | Properties <br/>Spreadsheet | Module, Category, Table                | Auto detection of data type for a value <br/>of the **Spreadsheet** cell with formula. <br/>The default value is `true`. <br/>If the value is `true`, the type can be left undefined.                                                                                                                               |
 | Concurrent Execution    | parallel                       | Boolean |                        | Module, Category, Table                | Controls whether to parallel the execution of a rule <br/>when the rule is called for an array instead of a <br/>single value as input parameter. <br/>Default is `false`.                                                                                                                                          |
 | Calculate All Cells     | calculateAllCells              | Boolean | Spreadsheet            | Module, Category, Table                | Returns a particular type. <br/>Default is true when calculation is started <br/>from the beginning of the spreadsheet. <br/>If this property is set to false, calculation is started <br/>from the last line of the spreadsheet.                                                                                        |
-| Empty Result Processing | emptyResultProcessing          | String  | Decision table         | Module, Category, Table                | Identifier of whether to process blank parameter <br/>value cells and return an empty result if found, <br/>or ignore and find the first non-empty result value.                                                                                                                                               |
+| Empty Result Processing | emptyResultProcessing          | String  | Decision table         | Module, Category, Table                | Identifier of whether to process blank parameter <br/>value cells and return an empty result if found, when <br/>set to **RETURN**, or ignore and find the first<br/>non-empty result value , when  set to **SKIP** (default).<br/>                                                                                                                                             |
+
+The following example illustrates how the property  **emptyResultProcessing** works depending on property values when x=1:
+ 
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Table Example</title>
+<style>
+    .table-container {
+        float: left;
+        margin-right: 20px; /* Adjust the space between the tables as needed */
+    }
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+    .yellow-background {
+        background-color: yellow;
+    }
+</style>
+</head>
+<body>
+
+
+<div class="table-container">
+
+<table>
+  <tr>
+    <th colspan="3" >SmartRules Integer codes(Integer x)</th>
+  </tr>
+  <tr>
+    <td>properties</td>
+    <td>emptyResultProcessing</td>
+    <td><strong>SKIP</strong></td>
+  </tr>
+  <tr>
+    <td>X</td>
+    <td colspan="2">RESULT</td>
+  </tr>
+  <tr>
+    <td>1-100</td>
+    <td colspan="2"></td>
+  </tr>
+  <tr>
+    <td>1-200</td>
+    <td class="yellow-background" colspan="2">3</td>
+  </tr>
+  <tr>
+    <td>1-300</td>
+    <td colspan="2">4</td>
+  </tr>
+</table>
+
+</body>
+</html>
+
+</div>
+
+<div class="table-container">
+
+<table>
+  <tr>
+    <th colspan="3" >SmartRules Integer codes(Integer x)</th>
+  </tr>
+  <tr>
+    <td>properties</td>
+    <td>emptyResultProcessing</td>
+    <td><strong>RETURN</strong></td>
+  </tr>
+  <tr>
+    <td>X</td>
+    <td colspan="2">RESULT</td>
+  </tr>
+  <tr>
+    <td>1-100</td>
+    <td colspan="2" class="yellow-background"></td>
+  </tr>
+  <tr>
+    <td>1-200</td>
+    <td colspan="2">3</td>
+  </tr>
+  <tr>
+    <td>1-300</td>
+    <td colspan="2">4</td>
+  </tr>
+</table>
+
+
+</div>
+
+<div style="clear: both;"></div>
+
+</body>
+</html>
+
 
 ##### Variation Related Properties
 
