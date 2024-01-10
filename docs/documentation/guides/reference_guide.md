@@ -850,8 +850,6 @@ Two-dimensional arrays can be used in rules tables, where mixing values and expr
 
 ![](ref_guide_images/2ca6c0bc1a0c1c1d20d42502bbff6d89.png)
 
-
-
 *Using two-dimensional arrays in a rules table*
 
 ###### Representing Date Values
