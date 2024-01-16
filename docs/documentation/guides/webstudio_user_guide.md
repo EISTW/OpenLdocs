@@ -511,7 +511,7 @@ A user can export, update, or edit a module directly in Rules Editor. Proceed as
     
 1.  To save the changes, click **Save** ![](webstudio_guide_images/065a365a7725869b00c56a0709886a2e.png).
 
-**Notes:** The 'Included Methods' and 'Excluded Methods' fields allow to set method filters. For more information, refer to the [Rule Services and Customization Guide > Dynamic Interface Support](https://openldocs.readthedocs.io/en/latest/documentation/guides/rule_services_usage_and_customization_guide/#dynamic-interface-support)
+**Notes:** The 'Included Methods' and 'Excluded Methods' fields provide the ability to set method filters. For more information, refer to the [Rule Services and Customization Guide > Dynamic Interface Support](https://openldocs.readthedocs.io/en/latest/documentation/guides/rule_services_usage_and_customization_guide/#dynamic-interface-support)
 
 #### Comparing and Reverting Module Changes
 
