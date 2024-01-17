@@ -7,6 +7,7 @@ User guides for the latest version are available via the left navigation.
 At the top of each page there is a link to the corresponding markdown file in the GitHub source repository, via which visitors can easily propose documentation updates.
 
 <img src="img/edit_github.png" width="30">
+
 (You can also click the GitHub link in the header bar to open the root folder of the source repository)
 
 <h3> Previous User Guides</h3>
