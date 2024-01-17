@@ -1,6 +1,6 @@
 site_name: OpenL Tablets
 site_url: https://openl.readthedocs.io/en/latest/
-edit_uri: edit/main/docs/
+edit_uri: edit/v5.26/docs/
 nav:
     - Installation Guide: documentation/guides/installation_guide.md
     - Demo Package Guide: documentation/guides/demo_package_guide.md
