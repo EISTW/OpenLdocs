@@ -1,14 +1,12 @@
 <img src="img/OpenLHome.png" width="700">
 
-<h3 style="margin-bottom:1.25em;">User Guides for v5.26</h3>
+<h3 style="margin-bottom:1.25em;">User Guides for v5.25</h3>
 
-User guides are available via the left navigation.
+User guides are available via the left navigation. 
 
-At the top of each page is a link to the corresponding markdown file in the GitHub source repository, via which visitors can propose documentation updates.
+For this release, guides are available in PDF format. 
 
-<img src="img/edit_github.png" width="30">
-
-(You can also click the GitHub link in the header bar to open the root of the source repository)
+(From version 5.26 onwards, guides are available in both PDF and HTML (Markdown) formats.) 
 
 <h3> User Guides for Other Versions</h3>
 
