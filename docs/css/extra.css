@@ -1,7 +1,76 @@
-/* test for left nav */
+/* Other stuff */
+--md-primary-fg-color: #6190e6;
 
+/* Settings for page content */
 .md-sidebar--secondary {
   order: 0;
+}
+
+
+p.indexpage  {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  padding: 0px;
+  font-size: 14px;
+  font-family: roboto;
+  }
+
+h2.indexpage  {
+  margin-top: 20px;
+  margin-bottom: 0px;
+  padding: 0px;
+  font-size: 22px;
+  font-family: roboto;
+  }
+
+.rst-content h2 {
+    margin-bottom: 5px;
+  }
+
+/* only affects lists inside navigation */
+.wy-menu-vertical li {
+  margin-top: -5px;
+  margin-bottom: -7px;
+  padding: 0px;
+  }
+
+.wy-side-nav-search {
+    padding-top: 0px;
+    padding-right: .809em;
+    padding-bottom: 5px;
+    padding-left: .809em;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.wy-side-nav-search .wy-dropdown>a, .wy-side-nav-search>a {
+    font-size: 80%;
+    font-weight: 700;
+    padding: 4px 6px;
+    margin-bottom: 0em;
+}
+
+
+/* below is a descendent selector */
+.wy-menu-vertical header {
+    height: 25px;
+    line-height: 30px;
+    padding: 0 1.618em;
+    margin: 2px 0 3px;
+    display: block;
+}
+
+/* only affects p.caption inside navigation */
+.wy-menu-vertical p.caption {
+    height: 25px;
+    line-height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+    display: block;
 }
 
 /* icon sizing in the left menu */
@@ -21,9 +90,9 @@
     color: #007aff;
 }
 
-/* Artifex blue color for background elements */
+/* Artifex blue color for background elements. Official EIS light blue is #00a7e1*/
 .wy-side-nav-search, .wy-nav-top {
-    background-color: #007aff;
+    background-color: white;
 }
 
 /* Accessibility: ensures that the version number is readable against the background color */
