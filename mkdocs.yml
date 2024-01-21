@@ -2,17 +2,16 @@ site_name: OpenL Tablets
 site_url: https://openl.readthedocs.io/en/latest/
 edit_uri: edit/v5.25/docs/
 nav:
-    - Installation Guide: documentation/guides/installation_guide.md
-    - Demo Package Guide: documentation/guides/demo_package_guide.md
+    - Installation Guide: documentation/OpenL Tablets - Installation Guide.pdf
+    - Demo Package Guide: documentation/OpenL Tablets - Demo Package Guide.pdf
     - For Business Users: 
-      - Reference Guide: documentation/guides/reference_guide.md
-      - WebStudio User Guide: documentation/guides/webstudio_user_guide.md
+      - Reference Guide: documentation/OpenL Tablets - Reference Guide.pdf
+      - WebStudio User Guide: documentation/OpenL Tablets - WebStudio User Guide.pdf
     - For Developers:
-      - Rule Services Usage and Customization Guide: documentation/guides/rule_services_usage_and_customization_guide.md
-      - Developer Guide: documentation/guides/developer_guide.md
-      - Activiti Integration Guide: documentation/guides/activiti_integration_guide.md
+      - Rule Services Usage and Customization Guide: documentation/OpenL Tablets - Rule Services Usage and Customization Guide.pdf
+      - Developer Guide: documentation/OpenL Tablets - Developer Guide.pdf
+      - Activiti Integration Guide: documentation/OpenL Tablets - Activiti Integration Guide.pdf
     - About OpenL: about.md
-    - Download PDFs: PDFs.md
   
 theme: 
     name: material
