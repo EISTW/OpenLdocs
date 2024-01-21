@@ -2,16 +2,16 @@ site_name: OpenL Tablets
 site_url: https://openl.readthedocs.io/en/latest/
 edit_uri: edit/v5.25/docs/
 nav:
-    - Installation Guide: 'https://openl-tablets.org/files/openl-tablets/5.23.0/OpenL%20Tablets%20-%20Installation%20Guide.pdf'
-    - Demo Package Guide: 'https://openl-tablets.org/files/openl-tablets/5.23.0/OpenL%20Tablets%20-%20Demo%20Package%20Guide.pdf'
+    - Installation Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Installation%20Guide.pdf'
+    - Demo Package Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Demo%20Package%20Guide.pdf'
     - For Business Users: 
-      - Reference Guide: 'https://openl-tablets.org/files/openl-tablets/5.23.0/OpenL%20Tablets%20-%20Reference%20Guide.pdf'
-      - WebStudio User Guide: 'https://openl-tablets.org/files/openl-tablets/5.23.0/OpenL%20Tablets%20-%20WebStudio%20User%20Guide.pdf'
+      - Reference Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Reference%20Guide.pdf'
+      - WebStudio User Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20WebStudio%20User%20Guide.pdf'
     - For Developers:
-      - Rule Services Usage and Customization Guide: 'https://openl-tablets.org/files/openl-tablets/5.23.0/OpenL%20Tablets%20-%20Rule%20Services%20Usage%20and%20Customization%20Guide.pdf'
-      - Developer Guide: 'https://openl-tablets.org/files/openl-tablets/5.23.0/OpenL%20Tablets%20-%20Developer%20Guide.pdf'
-      - Activiti Integration Guide: 'https://openl-tablets.org/files/openl-tablets/5.23.0/OpenL%20Tablets%20-%20Activiti%20Integration%20Guide.pdf'
-      - Maven Plugin Guide: 'https://openl-tablets.org/files/openl-tablets/5.23.0/OpenL%20Tablets%20-%20Maven%20Plugin%20Guide/'
+      - Rule Services Usage and Customization Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Rule%20Services%20Usage%20and%20Customization%20Guide.pdf'
+      - Developer Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Developer%20Guide.pdf'
+      - Activiti Integration Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Activiti%20Integration%20Guide.pdf'
+      - Maven Plugin Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Maven%20Plugin%20Guide/'
     - About OpenL: about.md    
   
 theme: 
