@@ -1,6 +1,6 @@
 <img src="img/OpenLHome.png" width="700">
 
-<h3 style="margin-bottom:1.25em;">User Guides for v5.25</h3>
+<h3 style="margin-bottom:1.25em;">User Guides</h3>
 
 User guides are available via the left navigation. 
 
