@@ -1,5 +1,7 @@
-/* test for left nav */
+/* Other stuff */
+--md-primary-fg-color: #6190e6;
 
+/* Settings for page content */
 .md-sidebar--secondary {
   order: 0;
 }
@@ -90,7 +92,7 @@ h2.indexpage  {
 
 /* Artifex blue color for background elements. Official EIS light blue is #00a7e1*/
 .wy-side-nav-search, .wy-nav-top {
-    background-color: #00a7e1;
+    background-color: white;
 }
 
 /* Accessibility: ensures that the version number is readable against the background color */

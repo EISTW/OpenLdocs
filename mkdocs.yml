@@ -1,26 +1,28 @@
 site_name: OpenL Tablets
-site_url: https://openl.readthedocs.io/en/v5.25/
+site_url: https://openl.readthedocs.io/en/latest/
 edit_uri: edit/v5.25/docs/
 nav:
-  - USER GUIDES: 
-    - Installation/demo guides: 
-      - Installation Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Installation%20Guide.pdf'
-      - Demo Package Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Demo%20Package%20Guide.pdf'
+    - Installation Guide: documentation/guides/installation_guide.md
+    - Demo Package Guide: documentation/guides/demo_package_guide.md
     - For Business Users: 
-      - Reference Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Reference%20Guide.pdf'
-      - WebStudio User Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20WebStudio%20User%20Guide.pdf'
+      - Reference Guide: documentation/guides/reference_guide.md
+      - WebStudio User Guide: documentation/guides/webstudio_user_guide.md
     - For Developers:
-      - Rule Services Usage and Customization Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Rule%20Services%20Usage%20and%20Customization%20Guide.pdf'
-      - Developer Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Developer%20Guide.pdf'
-      - Activiti Integration Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Activiti%20Integration%20Guide.pdf'
-      - Maven Plugin Guide: 'https://openl-tablets.org/files/openl-tablets/5.25.0/OpenL%20Tablets%20-%20Maven%20Plugin%20Guide/'
-  - THE OPENL PROJECT:
+      - Rule Services Usage and Customization Guide: documentation/guides/rule_services_usage_and_customization_guide.md
+      - Developer Guide: documentation/guides/developer_guide.md
+      - Activiti Integration Guide: documentation/guides/activiti_integration_guide.md
     - About OpenL: about.md
+    - Download PDFs: PDFs.md
   
 theme: 
-    name: readthedocs
+    name: material
     navigation_depth: 8
-
+    theme_dir: site/css/theme_override
+    custom_dir: site/css/theme_override
+    logo: assets/logo.png
+    features:
+    - content.action.edit
+    - content.action.view
 
 repo_url: https://github.com/EISTW/OpenLdocs/
 
