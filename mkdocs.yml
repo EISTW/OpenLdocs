@@ -1,11 +1,9 @@
 site_name: OpenL Tablets
-site_url: https://openl.readthedocs.io/en/v5.22/
+site_url: https://openl.readthedocs.io/en/latest/
 edit_uri: edit/v5.22/docs/
 nav:
-  - USER GUIDES: 
-    - Installation/demo guides: 
-      - Installation Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20Installation%20Guide.pdf'
-      - Demo Package Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20Demo%20Package%20Guide.pdf'
+    - Installation Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20Installation%20Guide.pdf'
+    - Demo Package Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20Demo%20Package%20Guide.pdf'
     - For Business Users: 
       - Reference Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20Reference%20Guide.pdf'
       - WebStudio User Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20WebStudio%20User%20Guide.pdf'
@@ -14,12 +12,17 @@ nav:
       - Developer Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20Developer%20Guide.pdf'
       - Activiti Integration Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20Activiti%20Integration%20Guide.pdf'
       - Maven Plugin Guide: 'https://openl-tablets.org/files/openl-tablets/5.22.0/OpenL%20Tablets%20-%20Maven%20Plugin%20Guide/'
-  - THE OPENL PROJECT:
-    - About OpenL: about.md
+    - About OpenL: about.md    
   
 theme: 
-    name: readthedocs
+    name: material
     navigation_depth: 8
+    theme_dir: site/css/theme_override
+    custom_dir: site/css/theme_override
+    logo: assets/logo.png
+    features:
+    - content.action.edit
+    - content.action.view
 
 repo_url: https://github.com/EISTW/OpenLdocs/
 
