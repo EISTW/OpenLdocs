@@ -1,10 +1,13 @@
-/* test for left nav */
+/* Other stuff */
+--md-primary-fg-color: #6190e6;
 
+/* Settings for page content */
 .md-sidebar--secondary {
   order: 0;
 }
 
-p  {
+
+p.indexpage  {
   margin-top: 5px;
   margin-bottom: 5px;
   padding: 0px;
@@ -12,7 +15,7 @@ p  {
   font-family: roboto;
   }
 
-h2  {
+h2.indexpage  {
   margin-top: 20px;
   margin-bottom: 0px;
   padding: 0px;
@@ -24,20 +27,10 @@ h2  {
     margin-bottom: 5px;
   }
 
-
-
-
-/* set vertical spacing in left nav */
-
-li {
+/* only affects lists inside navigation */
+.wy-menu-vertical li {
   margin-top: -5px;
   margin-bottom: -7px;
-  padding: 0px;
-  }
-
-p.caption {
-  margin-top: -10px;
-  margin-bottom: -10px;
   padding: 0px;
   }
 
@@ -58,12 +51,25 @@ p.caption {
 }
 
 
-/* below are two descendent selectors */
-.wy-menu-vertical header, .wy-menu-vertical p.caption {
+/* below is a descendent selector */
+.wy-menu-vertical header {
     height: 25px;
     line-height: 30px;
     padding: 0 1.618em;
     margin: 2px 0 3px;
+    display: block;
+}
+
+/* only affects p.caption inside navigation */
+.wy-menu-vertical p.caption {
+    height: 25px;
+    line-height: 30px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 0px;
+    padding-left: 5px;
     display: block;
 }
 
@@ -86,7 +92,7 @@ p.caption {
 
 /* Artifex blue color for background elements. Official EIS light blue is #00a7e1*/
 .wy-side-nav-search, .wy-nav-top {
-    background-color: #00a7e1;
+    background-color: white;
 }
 
 /* Accessibility: ensures that the version number is readable against the background color */
