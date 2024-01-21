@@ -1,23 +1,19 @@
 <img src="img/OpenLHome.png" width="700">
 
-<h2 style="margin-bottom:1.25em;">v5.23 User Guides</h2>
+<h3 style="margin-bottom:1.25em;">User Guides</h3>
 
-User guides for this version are available via the left navigation.
+User guides are available via the left navigation. 
 
-<h2 style="margin-top:1.25em; margin-bottom:1.25em;"> Previous User Guides</h2>
+For this release, guides are available in PDF format. 
 
-[v5.22](https://openldocs.readthedocs.io/en/v5.22/)
+(From version 5.26 onwards, guides are available in both PDF and HTML (Markdown) formats.) 
 
-[v5.21](https://openldocs.readthedocs.io/en/v5.21/)
+<h3> User Guides for Other Versions</h3>
 
-[v5.20](https://openldocs.readthedocs.io/en/v5.20/)
+To access user guides for other versions of the software, click the small flyout menu banner in the bottom right of the website:
 
-[v5.19](https://openldocs.readthedocs.io/en/v5.19/)
+<img src="img/versions_flyout_closed.png" width="120">
 
-[v5.18](https://openldocs.readthedocs.io/en/v5.18/)
+Clicking the banner opens a pane with a link to all the other versions.
 
-[v5.17](https://openldocs.readthedocs.io/en/v5.17/)
-
-[v5.16](https://openldocs.readthedocs.io/en/v5.16/)
-
-[v5.15](https://openldocs.readthedocs.io/en/v5.15/)
+<img src="img/versions_flyout_open.png" width="400">
