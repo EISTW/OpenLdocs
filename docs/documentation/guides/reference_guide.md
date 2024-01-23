@@ -2870,8 +2870,10 @@ The **Dev** group properties are listed in the following table:
 | Empty Result Processing | emptyResultProcessing          | String  | Decision table         | Module, Category, Table                | Identifier of whether to process blank parameter <br/>value cells and return an empty result if found, when <br/>set to **RETURN**, or ignore and find the first<br/>non-empty result value, when  set to **SKIP** (default).<br/>                                                                                                                                             |
 
 The following example illustrates how the property  **emptyResultProcessing** works depending on property values when x=1:
+
+<! ––  Author note: The following tables are set up using HTML in order to apply highlighting  ––>
  
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
