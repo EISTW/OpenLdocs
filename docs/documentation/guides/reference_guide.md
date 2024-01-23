@@ -353,7 +353,7 @@ The following example contains empty case interpretation. For **Senior Driver**,
 
 ##### Simple and Smart Rules Tables
 
-Practice shows that most of decision tables have a simple structure: there are conditions for input parameters of a decision table that check equality of input and condition values, and a return value. Because of this, OpenL Tablets have simplified decision table representations. A simplified decision table allows ping condition and return columns declarations, and thus the table consists of a header, column titles and condition and return values, and, optionally, properties.
+Practice shows that most of decision tables have a simple structure: there are conditions for input parameters of a decision table that check equality of input and condition values, and a return value. Because of this, OpenL Tablets have simplified decision table representations. A simplified decision table allows skipping condition and return columns declarations, and thus the table consists of a header, column titles and condition and return values, and, optionally, properties.
 
 The following topics are included in this section:
 
