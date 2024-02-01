@@ -124,14 +124,15 @@ h2.indexpage  {
         color: #fff;
     }
 
-    td {
+   /* correction 
+  td {
         background-color: #000 !important;
     }
 
     tr:nth-child(2n-1) td{
         background-color: #333 !important;
     }
-
+*/
     pre {
         color: #000;
     }
