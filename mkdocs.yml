@@ -2,6 +2,7 @@ site_name: OpenL Tablets
 site_url: https://openl.readthedocs.io/en/latest/
 edit_uri: edit/main/docs/
 nav:
+    - CSS Tests: CSS_TESTS.md
     - Installation Guide: documentation/guides/installation_guide.md
     - Demo Package Guide: documentation/guides/demo_package_guide.md
     - For Business Users: 
