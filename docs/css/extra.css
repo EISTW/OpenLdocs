@@ -1,5 +1,5 @@
 /* Increase h6 font size */
-h1 {
+.md-typeset h1 {
     color: red;
     font-size: 5em;
 }
