@@ -1,5 +1,12 @@
 /* Increase h5 font size */
-h5{font-size:200%}
+.md-typeset h6 {
+    color: var(--md-default-fg-color--light);
+    font-size: 5em;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    margin: 1.25em 0;
+}
+*, :after, :before {
 
 /*
  * Wrap inline code samples otherwise they shoot of the side and
