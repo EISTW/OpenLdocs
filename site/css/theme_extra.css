@@ -1,3 +1,6 @@
+/* Increase h5 font size */
+h5{font-size:200%}
+
 /*
  * Wrap inline code samples otherwise they shoot of the side and
  * can't be read at all.
