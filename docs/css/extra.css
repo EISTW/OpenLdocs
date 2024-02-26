@@ -1,5 +1,5 @@
 /* Increase h6 font size */
-h6 {
+h1 {
     color: var(--md-default-fg-color--light);
     font-size: 5em;
     font-weight: 700;
