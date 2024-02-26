@@ -1,10 +1,7 @@
 /* Increase h6 font size */
 h1 {
-    color: var(--md-default-fg-color--light);
+    color: red;
     font-size: 5em;
-    font-weight: 700;
-    letter-spacing: -.01em;
-    margin: 1.25em 0;
 }
 
 /* Other stuff */
