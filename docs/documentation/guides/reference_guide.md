@@ -1124,9 +1124,8 @@ During execution, the system takes default values from FinancialData data type.
 
 For more information on using runtime context properties in Datatype tables, see [Runtime Context Properties in Datatype Tables](#runtime-context-properties-in-datatype-tables).
 
-Datatype table output results can be customized the same way as spreadsheets as described in [Spreadsheet Result Output Customization](#spreadsheet-result-output-customization).
-	
-If a spreadsheet returns a data type rather than SpreadsheetResult and the attributes of this data type must be filtered, that is, included or excluded from the final output structure, attributes of this data type must be marked with ~ or *. An example is available in [Introducing Datatype Tables](https://openldocs.readthedocs.io/en/latest/documentation/guides/reference_guide/#introducing-datatype-tables).
+Datatype table output results can be customized the same way as spreadsheets as described in [Spreadsheet Result Output Customization](#spreadsheet-result-output-customization). 
+To filter specific attributes of a data type from the REST response, mark unwanted attributes with a tilde ('~'). Alternatively, you can highlight desired attributes using an asterisk ('*'). Here's an example:
 	
 ![](ref_guide_images/EPBDS-10058_3.png)
 
@@ -1905,7 +1904,7 @@ If passing results of the Rate step to another rule, the type of the spreadsheet
 
 To simplify integration with OpenL rules, customize serialization output of SpreadsheetResult objects by adding or removing steps or columns from spreadsheet result output.
 
-- To identify steps or columns to be returned in the SOAP/REST response, mark them using the \* asterisk symbol.
+- To identify steps or columns to be returned in the REST response, mark them using the \* asterisk symbol.
 - To ensure that certain steps or columns are not included in output, mark them with the ~ tilde symbol.
 
 Consider the following spreadsheets.
