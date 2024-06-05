@@ -1501,12 +1501,12 @@ There is also one more spreadsheet table that uses fields from the first spreads
 
 *Another spreadsheet table referencing fields of the first spreadsheet table*
 
-To create a test table for a spreadsheet or decision table that incorporates another SpreadsheetResult as an input parameter, you can define the test table input using specific notations to reference the necessary values:
+To create a test table for a spreadsheet or decision table that accepts another SpreadsheetResult as an input parameter, you can define the test table input using specific notations to reference the necessary values:
 
 - ***Standard Notation***: Use the format _<Input_name>.$<column_name>$<row_name>_ for general cases where you need to specify both the column and row names from the spreadsheet table that is being used as input. In this notation:
   <br/>&nbsp;&nbsp;&nbsp;&nbsp;_<Input_name>_ represents the name of the input parameter.
   <br/>&nbsp;&nbsp;&nbsp;&nbsp;_<column_name>_ and _<row_name>_ refer to the respective names of the column and row within the spreadsheet table that you're using as input for the table to be tested.
-- ***Simplified Syntax for Single-column Tables***: In situations where the input spreadsheet table consists of only one column (aside from the Step column), a simplified syntax can be employed: _<Input_name>.$<row_name>_. This streamlined approach allows for direct reference to the row within the single-column input table, simplifying the notation and making it more straightforward to use.
+- ***Simplified Syntax for Single-column Tables***: In situations where the input spreadsheet table consists of only one column (aside from the Step column), a simplified syntax can be employed: _<Input_name>.$<row_name>. 
 
 The example below demonstrates the usage of simplified syntax for single-column tables.
 
