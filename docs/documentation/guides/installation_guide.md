@@ -1014,6 +1014,7 @@ This section describes additional configuration for OpenL Studio and includes th
 -   [Configuring User Mode](#configuring-user-mode)
 -   [Configuring Google Analytics](#configuring-google-analytics)
 -   [Configuring Private Key for Repository Security](#configuring-private-key-for-repository-security)
+-   [Configuring User for Migration](#configuring-user-for-migration)
 
 The changes described in this section can be made in the properties file as described in [OpenL Studio Home Directory Configuration](#openl-tablets-webstudio-home-directory-configuration).
 
@@ -1063,6 +1064,14 @@ The private key must be specified without spaces.
 
 !!! note
 	The private key must be configured prior to creating any secured connections. Otherwise, all stored passwords become invalid.
+
+#### Configuring User for Migration
+
+Sometimes OpenL Studio needs to make changes in repositories in order to complete migration between versions. In this case, it uses the following username and email to show as author of those changes:
+```
+migration.user.name=Studio Migration
+migration.user.email=openltablets@eisgroup.com
+```
 
 ## Deploy OpenL Rule Services under Apache Tomcat
 
