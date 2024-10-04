@@ -1831,7 +1831,7 @@ Projects in the repository editor are filtered the same way as in Rules Editor.
 
 To filter projects by name, enter the name in the filter text box. All projects matching the name are displayed in the **Projects** list.
 
-To group projects by repository or tag types, click the **Group Projects** icon ![](webstudio_guide_images/f418655e8c30ace7c19b27edcce5d992.png)and select the required values. For more information on tag definition for a project, see [Managing Tags](#managing-tags).
+To group projects by repository or tag types, click the **Group Projects** icon ![](webstudio_guide_images/f418655e8c30ace7c19b27edcce5d992.png)and select the required values. Please note that values of tags for grouping are taken from the most recent version of a project. If user has changed project tags in an opened project, a project is required to be saved in order for a change to be reflected in a tree. For more information on tag definition for a project, see [Managing Tags](#managing-tags).
 
 ![](webstudio_guide_images/6591bdf7659bde341a89431f286763f5.jpeg)
 
@@ -1905,12 +1905,8 @@ To create a new project from template, proceed as follows:
     If a Git repository with non-flat structure is selected, the **Path** field with the / default value is displayed and can be modified as required. The path is defined inside the repository and can start with or without /.
     
 1.  Click **Create**.
-    
-    If the tag types are defined as described in [Managing Tags](#managing-tags), the tag pop-up window appears for selecting a project tag. If the tag type is defined as optional, a project can be left with the tag **None**. If the tag type is defined as extensible, new tags can be created in the pop-up window by clicking on the required tag field and replacing its value. Otherwise, predefined tag values must be used.
-    
-    ![](webstudio_guide_images/f760348e2e6acd823dd72a04b9841f40.jpeg)
-    
-    *Selecting project tags*
+
+    If tag types have been defined as described in the [Managing Tags](#managing-tags) section, a tag pop-up window should appear. For more details, see the [Specifying tags for a new project](#specifying-tags-for-a-new-project) section.
     
     A new project is created in Design repository. Initially, project structure corresponds to the selected project template but can be constructed manually.
     
@@ -1964,7 +1960,7 @@ Proceed as follows:
     
 1.  Click **Create** to complete.
 
-If the tag types are defined as described in [Managing Tags](#managing-tags), the tag pop-up window appears for selecting a project tag. If the tag type is defined as optional, a project can be left with the tag **None**. If the tag type is defined as extensible, new tags can be created in the pop-up window. Otherwise, predefined tag values must be used.
+If tag types have been defined as described in the [Managing Tags](#managing-tags) section, a tag pop-up window should appear. For more details, see the [Specifying tags for a new project](#specifying-tags-for-a-new-project) section.
 
 #### Creating a Project from OpenAPI file
 
@@ -1995,7 +1991,7 @@ To create a project from the OpenAPI file, proceed as follows:
     
 1.  Click **Create**.
 
-If the tag types are defined as described in [Managing Tags](#managing-tags), the tag pop-up window appears for selecting a project tag. If the tag type is defined as optional, a project can be left with the tag **None**. If the tag type is defined as extensible, new tags can be created in the pop-up window. Otherwise, predefined tag values must be used.
+If tag types have been defined as described in the [Managing Tags](#managing-tags) section, a tag pop-up window should appear. For more details, see the [Specifying tags for a new project](#specifying-tags-for-a-new-project) section.
 
 #### Creating a Project from ZIP Archive
 
@@ -2023,7 +2019,7 @@ A project can only be created from a `zip` archive. The .`rar` or `.7zip` archiv
     
 1.  Click **Create** to complete.
 
-If the tag types are defined as described in [Managing Tags](#managing-tags), the tag pop-up window appears for selecting a project tag. If the tag type is defined as optional, a project can be left with the tag **None**. If the tag type is defined as extensible, new tags can be created in the pop-up window. Otherwise, predefined tag values must be used.
+If tag types have been defined as described in the [Managing Tags](#managing-tags) section, or if the project already contains tags, a tag pop-up window should appear. For more details, see the [Specifying tags for a new project](#specifying-tags-for-a-new-project) section.
 
 #### Importing a Project from Workspace
 
@@ -2040,8 +2036,8 @@ A new project can be created in Design repository by loading a project with the 
     
 1.  Select check boxes for projects to be uploaded.
 2.  To complete creation, click **Create**.
-    
-If the tag types are defined as described in [Managing Tags](#managing-tags), the tag pop-up window appears for selecting a project tag. If the tag type is defined as optional, a project can be left with the tag **None**. If the tag type is defined as extensible, new tags can be created in the pop-up window. Otherwise, predefined tag values must be used.
+
+If tag types have been defined as described in the [Managing Tags](#managing-tags) section, or if the project already contains tags, a tag pop-up window should appear. For more details, see the [Specifying tags for a new project](#specifying-tags-for-a-new-project) section.
 
 #### Creating a Project from a Repository
 
@@ -2055,7 +2051,33 @@ A project existing in the Git repository can be imported into OpenL Studio as fo
 
 *Importing a project from a Git repository*
 
-If the tag types are defined as described in [Managing Tags](#managing-tags), the tag pop-up window appears for selecting a project tag. If the tag type is defined as optional, a project can be left with the tag **None**. If the tag type is defined as extensible, new tags can be created in the pop-up window. Otherwise, predefined tag values must be used.
+If tag types have been defined as described in the [Managing Tags](#managing-tags) section, or if the project already contains tags, a tag pop-up window should appear. For more details, see the [Specifying tags for a new project](#specifying-tags-for-a-new-project) section.
+
+### Specifying tags for a new project
+
+Project tags are stored in the `tags.properties` file located in the root directory of the project.
+
+A new project might already contain tag values. This can happen, for instance, when a ZIP file is imported or an existing project is copied. As a result, a project may have tags that are either not configured or incorrectly configured in Web Studio. This situation arises when the specified tag type is not configured at all, or if the tag type is not extensible and the specified tag value is not allowed.
+
+If the project contains tags that cannot be applied, a **Missing tags** pop-up window will appear. This window displays the tag values, explains why they cannot be applied, and indicates what will happen next. If a tag type is not configured in Web Studio, the tag will be ignored. If a tag value is not permitted, the user will be prompted to specify a valid value in the subsequent pop-up window.
+
+![](webstudio_guide_images/9188d1765621c994c526b6f5bc3ac4cf477854b2.png)
+
+*Some tags are not configured properly*
+
+If the tag types are defined as described in the [Managing Tags](#managing-tags) section, a pop-up window will appear, prompting the user to specify project tags.
+
+Default tag values will be determined in the following order:
+
+1. If the project already contains a tag value, it will be used as the default.
+2. If a tag value can be derived using project name templates, it will be applied.
+3. Otherwise, **None** will be set as the default.
+
+![](webstudio_guide_images/f760348e2e6acd823dd72a04b9841f40.jpeg)
+    
+*Selecting project tags*
+
+If the tag type is defined as optional, the project can be left with the tag value **None**. If the tag type is defined as extensible, new tags can be created in the pop-up window by clicking on the required tag field and entering a new value. Otherwise, only predefined tag values can be used.
 
 ### Opening a Project
 
@@ -2147,6 +2169,16 @@ Each rule project has a set of properties displayed in the **Properties** tab wh
 *Project properties*
 
 Properties, such as Name and Created At / Created By, are updated automatically by the system, and users cannot edit them in the OpenL Studio UI. However, a user can modify tags in this tab.
+
+If the user chooses to modify tag values, the project status will change to **In editing**, unless it is already in this state.
+
+There are scenarios where a project has a tag that does not have a configured tag type, as described in the [Managing Tags](#managing-tags) section, or contains a value that is not permitted. This can occur if a project was created before tag types were reconfigured or removed.
+
+In cases where a tag type is missing, the user can only change its value to **None**, effectively removing the tag.
+
+If a tag contains a value that is not permitted, the user can only update it to a permitted value.
+
+If a tag is used for grouping in a project tree, its value in a tree gets updated only when the project is saved.
 
 Note that in case of the Git repository, in the Modified By field, the user’s display name is used, not the username, and the tooltip for this field displays the user’s email.
 
@@ -3183,7 +3215,9 @@ To create project tags, proceed as follows:
 
 The **Projects without tags** window appears. It contains all projects that have **None** selected for one or multiple tag types, or do not have tags defined at all, and which name matches the project name template.
 
-![](webstudio_guide_images/51956d81caa63107a06d6ff4974e4a6f.jpeg)
+Please note that only projects currently opened by the user can be modified. If a project exists in the repository but is not opened for the current user, it will appear in the pop-up but will be grayed out and cannot be selected.
+
+![](webstudio_guide_images/288b7d29e213832eb063e5b0814defc3.png)
 
 *Applying tags for projects matching project name templates.*
 
@@ -3197,6 +3231,8 @@ In this window, tags are marked with colors as follows:
 | Grey      | A tag is already assigned to the project. The project still appears on the list because it has other tag types with the **None** values. <br/>If the tag is already assigned, but a different tag value is derived from the project name according to the template, the existing value will be replaced <br/>with the derived value. The replacement is identified with the arrow. The derived value can be created if the tag type is extensible. <br/>In this case, a new value will be marked green. If the derived tag value does not exist and the tag type is not extensible, no replacement happens, <br/>and the old value appears in grey with no arrow. |
 
 This logic is explained in the tooltips for each tag color type.
+
+Note that if project tags are successfully modified, the project status will change to **In editing**, unless it is already in this status. In order for those changes to be accessible for all users, the projects must be saved beforehand.
 
 ### Managing Email Server Configuration
 
