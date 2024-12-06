@@ -743,7 +743,7 @@ The following topics are included in this section:
 -   [Configuring Application Level Kafka Settings](#configuring-application-level-kafka-settings)
 -   [Configuring Service Level Kafka Settings](#configuring-service-level-kafka-settings)
 
-####### Enabling Kafka Publisher for a Service
+###### Enabling Kafka Publisher for a Service
 
 By default, Kafka Publisher is not used for deployed projects. To enable it, add the Kafka Publisher type to `rules-deploy.xml` as follows:
 
@@ -757,7 +757,7 @@ By default, Kafka Publisher is not used for deployed projects. To enable it, add
 </rules-deploy>
 ```
 
-####### Configuring Application Level Kafka Settings
+###### Configuring Application Level Kafka Settings
 
 OpenL Rule Services can be configured via the `application.properties` file or environment variables. Kafka-related settings are as follows:
 
@@ -766,60 +766,56 @@ OpenL Rule Services can be configured via the `application.properties` file or e
 | ruleservice.kafka.bootstrap.servers | localhost:9092   | Comma separated Kafka broker hosts.                            |
 | `ruleservice.kafka.group.id`        | openl-webservice | Group name for all Kafka consumers created by the application. |
 
-####### Configuring Service Level Kafka Settings
+###### Configuring Service Level Kafka Settings
 
 If an OpenL Tablets service is configured to use Kafka Publisher, the OpenL Tablets service must contain the `kafka-deploy.yaml` file in the same place where rules-deploy.xml deployment configuration is located.
 Kafka settings for a service:
 
-```
+```yaml
 service:
     in.topic.name: in-topic-for-service
     out.topic.name: out-topic-for-service
     dlt.topic.name: dlt-topic-for-service
     consumer.configs:
         auto.offset.reset: earliest
+    producer.configs:
+        acks: all
+    dlt.producer.configs:
+        acks: all
 ```
 
 Kafka setting for each rules method that want to expose as a service:
 
-```
-method.configs:
+```yaml
+methods:
   - method.name: method1
     in.topic.name: in-topic-for-method1
     out.topic.name: out-topic-for-method1
     dlt.topic.name: dlt-topic-for-method1
+    dlt.producer.configs:
+        acks: 1
   - method.name: method2
     in.topic.name: in-topic-for-method2
     out.topic.name: out-topic-for-method2
     dlt.topic.name: dlt-topic-for-method2
     consumer.configs:
-        auto.offset.reset: earliest
+        auto.offset.reset: latest
 ```
 
 Configuring Kafka consumers or Kafka producer is supported via `producer.configs`, `consumer.configs`, and `dlt.producer.configs`. These settings can be used for a service or each method.
 
+Configurations in `methods` section extend and override the configuration from the `service` section.
+
 The default configuration for all methods or service is supported if `producer.configs`, `consumer.configs` and `dlt.producer.configs` are defined at the top level of `kafka-deploy.yaml`.
 
-An example of `consumer.configs` is as follows:
+It is possible to reference on the environment or system properties from the YAML configuration. For example the following is used by default in OpenL RuleServices:
 
 ```yaml
-auto.offset.reset: earliest
+consumer.configs:
+    bootstrap.servers: ${ruleservice.kafka.bootstrap.servers}
+    group.id: ${ruleservice.kafka.group.id}
+    client.id: ${random.uuid}
 ```
-
-An example of the `method.configs` is as follows:
-
-```yaml
-  - method.name: method1
-    in.topic.name: in-topic-for-method1
-    out.topic.name: out-topic-for-method1
-    dlt.topic.name: dlt-topic-for-method1
-  - method.name: method2
-    in.topic.name: in-topic-for-method2
-    out.topic.name: out-topic-for-method2
-    dlt.topic.name: dlt-topic-for-method2
-```
-
-Kafka consumers for all methods are configured to use `auto.offset.reset = earliest` as described in the previous example.
 
 For a complete list of configuration properties, see [https://kafka.apache.org/documentation/\#consumerconfigs](https://kafka.apache.org/documentation/#consumerconfigs) and [https://kafka.apache.org/documentation/\#producerconfigs](https://kafka.apache.org/documentation/#producerconfigs).
 
