@@ -185,15 +185,15 @@ To install JDK, perform the following steps:
 
 	Options are as follows:
 	
-	-   Download OpenJDK 11 available at <https://openjdk.java.net/projects/jdk/11/>.
-	-   Download jdk-8u231 or later from <http://www.oracle.com/technetwork/java/javase/downloads/index.html> to the target directory.
+	-   Download OpenJDK 21 available at <https://adoptium.net/>.
+	-   Download OpenJDK 11 or later from <https://adoptium.net/temurin/releases/> to the target directory.
 	
     Further in the document, this catalog is referred to as `<JAVA_HOME>`.
 
     !!! note
     	It is highly recommended to avoid installing Java in the default Program Files directory because it can cause problems due to space characters in the path to the folder.
 
-    For more information on the installation, see <http://www.oracle.com/technetwork/java/javase/index-137561.html>.
+    For more information on the installation, see <https://adoptium.net/installation/>.
 
 1. Install JDK according to the instructions.  
 	Now the environment variable `JAVA_HOME` must be set to the pathname of the directory where JDK is installed. 
@@ -202,14 +202,14 @@ To install JDK, perform the following steps:
 	3. In the **Advanced** tab, click **Environment Variables**.
 	4. In the **System variables** area, click **New**.
 	5. In the **Variable** name field, enter *JAVA_HOME.*
-	6. In the **Variable** value field, enter the path to the directory where JDK is installed, for example, `C:\Java\jdk1.8.0_231`.
+	6. In the **Variable** value field, enter the path to the directory where JDK is installed, for example, `C:\Java\jdk-21`.
 	7.  Click **OK** to complete.
 
-8. For Unix/Linux environments, assuming the target directory is `/usr/lib/jvm/jdk1.8.0_231`, to set up the environment variable `JAVA_HOME` for a single user, proceed as follows:
+8. For Unix/Linux environments, assuming the target directory is `/usr/lib/jvm/jdk-21`, to set up the environment variable `JAVA_HOME` for a single user, proceed as follows:
 	9.  Log in to the account and open `.bash_profile:nano ~/.bash_profile`.
 	10. Add the following line
         
-	    `export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_231`.
+	    `export JAVA_HOME=/usr/lib/jvm/jdk-21`.
 
 	11. Add or correct the system PATH as follows:
 	
@@ -217,11 +217,11 @@ To install JDK, perform the following steps:
 	
 	12. To save, press **CTRL+O** and then press **CTRL+X** to exit.
 	
-13. For Unix/Linux environments, assuming the target directory is `/usr/lib/jvm/jdk1.8.0_231`, to set up the environment variable `JAVA_HOME` for all users, proceed as follows:
+13. For Unix/Linux environments, assuming the target directory is `/usr/lib/jvm/jdk-21`, to set up the environment variable `JAVA_HOME` for all users, proceed as follows:
 	14. Log in as root and open the `nano /etc/profile` profile.
 	15. Add the following line:
 	
-	    `export JAVA_HOME=/usr/lib/jvm/jdk1.8.0_231`.
+	    `export JAVA_HOME=/usr/lib/jvm/jdk-21`.
 	
 	16. Add or correct the system PATH as follows:
 	
@@ -341,16 +341,16 @@ Proceed as follows:
 1.  Open a terminal window and enter the following:
 
 	```
-	sudo apt-get install tomcat7
+	sudo apt-get install tomcat9
 	```
 
 1.  Start Tomcat with the next command:
 
 	```
-	sudo /etc/init.d/tomcat7 start
+	sudo /etc/init.d/tomcat9 start
 	```
 
-	All necessary folders must be located in `/var/lib/tomcat7`.
+	All necessary folders must be located in `/var/lib/tomcat9`.
 
 1.  To ensure that Tomcat works properly, open the browser and enter *http://localhost:8080*.
 
@@ -360,11 +360,11 @@ Proceed as follows:
 
 	If the 404 error appears, try to restart Tomcat as follows:
 
-	sudo /etc/init.d/tomcat7 restart
+	sudo /etc/init.d/tomcat9 restart
 
 	Alternatively, stop Tomcat by entering the following command in command line and then start it as described previously:
 
-	sudo /etc/init.d/tomcat7 stop
+	sudo /etc/init.d/tomcat9 stop
 
 ##### Installing Apache Tomcat from ZIP File
 
@@ -501,7 +501,7 @@ To install OpenL Studio under Linux and Mac OS, perform the following steps:
 1.  Change the owner for this folder:
 
 	```
-	sudo chown tomcat7:tomcat7 /<OPENL_HOME>
+	sudo chown tomcat9:tomcat9 /<OPENL_HOME>
 	```
 
 1.  Download OpenL Studio WAR file from <https://github.com/openl-tablets/openl-tablets/releases/> to a temporary folder.
@@ -555,12 +555,12 @@ Before configuration, perform the following steps:
 	Alternatively, locate required libraries directly in `\<TOMCAT_HOME>\lib` with other Tomcat libraries.
 
 	|  Database   | Driver                            |
-	|------------|-----------------------------------|
-	|  MySQL      | `mysql-connector-java-5.1.31.jar` |
-	|  MariaDB    | `mariadb-java-client-2.0.1.jar`   |
-	|  Oracle     | `ojdbc6.jar`                      |
-	|  MS SQL     | `mssql-jdbc-7.2.2.jre8.jar`       |
-	|  PostgreSQL | `postgresql-9.3-1100.jdbc4.jar`   |
+	|-------------|-----------------------------------|
+	|  MySQL      | `mysql-connector-j-8.4.0.jar`     |
+	|  MariaDB    | `mariadb-java-client-2.7.12.jar`  |
+	|  Oracle     | `ojdbc11.jar`                     |
+	|  MS SQL     | `mssql-jdbc-12.10.0.jre11.jar`    |
+	|  PostgreSQL | `postgresql-42.7.5.jar`           |
 
 	For more information on URL value according to the database type, see the **URL value according to the database type** table in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
 
@@ -627,7 +627,7 @@ This section explains how to set up a MySQL database. Proceed as follows:
 
 	When MySQL is successfully installed on the user’s computer, an empty database for OpenL Studio in MySQL must be created and permissions to modify this database granted to the user from which the OpenL Studio will work with this database.
 
-1.  To open MySQL Command Line Client, select **Start \> All Programs \> MySQL \> MySQL Server 5.5 \> MySQL Command Line Client** and enter the following commands:
+1.  To open MySQL Command Line Client, select **Start \> All Programs \> MySQL \> MySQL Server 8.4 \> MySQL Command Line Client** and enter the following commands:
 
 	`CREATE USER openl_user IDENTIFIED BY 'openl_password';`
 
@@ -720,12 +720,13 @@ Proceed as follows:
 
 	The following table explains URL values according to the database type:
 
-	|  Database       | URL value                                                                               |
-	|----------------|-----------------------------------------------------------------------------------------|
-	|  MySQL, MariaDB | `jdbc:mysql://[host][:port]/[schema]`                                                   |
-	|  Oracle         | `jdbc:oracle:thin:@//[ host][:port]/service`                                            |
-	|  MS SQL         | `jdbc:sqlserver://[serverName[\instanceName][:port]][;property=value[;property=value]]` |
-	|  PostgreSQL     | `jdbc:postgresql://[host][:port]/[schema]`                                              |
+	|  Database    | URL value                                                                               |
+	|--------------|-----------------------------------------------------------------------------------------|
+	|  MySQL       | `jdbc:mysql://[host][:port]/[schema]`                                                   |
+	|  MariaDB     | `jdbc:mariadb://[host][:port]/[schema]`                                                 |
+	|  Oracle      | `jdbc:oracle:thin:@//[ host][:port]/service`                                            |
+	|  MS SQL      | `jdbc:sqlserver://[serverName[\instanceName][:port]][;property=value[;property=value]]` |
+	|  PostgreSQL  | `jdbc:postgresql://[host][:port]/[schema]`                                              |
 
 	For more details about how to configure the repository of a specific type, please refer to the corresponding section below:
 
