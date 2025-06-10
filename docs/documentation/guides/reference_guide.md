@@ -14,7 +14,7 @@ This guide is mainly intended for analysts and developers who create application
 
 Basic knowledge of Excel® is required to use this guide effectively. Basic knowledge of Java is required to follow the development related sections.
 
-### Related Information
+### Related Information.
 
 The following table lists sources of information related to contents of this guide:
 
