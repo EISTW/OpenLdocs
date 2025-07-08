@@ -674,7 +674,7 @@ OpenL Studio provides embedded tools for modifying table data directly in a web 
     -   Right-click anywhere in the table and click **Edit**.
     -   Double click the cell to edit.
     
-    Alternatively, the file can be edited in Excel. In the local mode, the rule file is opened in Excel, and changes become available in OpenL Studio upon Excel file saving. In the remote mode or if a demo-policy file exists, clicking the **Open** button initiates file download. After editing the file locally, it can be uploaded back to the project in Rules Editor as described in [Exporting, Updating, and Editing a Module](#exporting-updating-and-editing-a-module) or via the repository.
+    Alternatively, the file can be edited in Excel. Clicking the **Open** button initiates file download. After editing the file locally, it can be uploaded back to the project in Rules Editor as described in [Exporting, Updating, and Editing a Module](#exporting-updating-and-editing-a-module) or via the repository.
     
     The following table is switched to the edit mode:
     
@@ -885,7 +885,7 @@ To perform a simple search, in the **Search** field, enter a word or phrase and 
 
 *Starting a simple search*
 
-OpenL Studio displays all tables containing the entered text. Above each table, there is the **Open Table in Excel** link redirecting to the Excel file containing the entered text. The **Edit Table** link opens the table in Rules Editor in the editing mode.
+OpenL Studio displays all tables containing the entered text. The **View Table** link opens the table in Rules Editor.
 
 ![](webstudio_guide_images/5419dbed08d7b6086179295a8e07bcb2.png)
 
