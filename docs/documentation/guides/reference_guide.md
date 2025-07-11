@@ -1043,13 +1043,24 @@ For more information on creating vocabulary for data elements, see [Vocabulary D
 A Datatype table has the following structure:
 
 1.  The first row is the header containing the **Datatype** keyword followed by the name of the data type.
-2.  Every row, starting with the second one, represents one attribute of the data type.
+2.  Every row, starting with the second one, represents one attribute of the data type. Each attribute must include the following **required** columns:
     
-    The first column contains attribute types, and the second column contains corresponding attribute names.
-    
-    **Note:** While there are no special restrictions, usually an attribute type starts with a capital letter and attribute name starts with a small letter.
-    
-1.  The third column is optional and defines default values for fields.
+	- The first column contains the **Type** of the attribute.
+	- The second column contains the corresponding attribute **Name**.
+	
+	**Note:** While there are no special restrictions, usually an attribute type starts with a capital letter and attribute name starts with a small letter.
+
+	- Starting from the third column, all columns are optional and may be used to provide additional information about each attribute. Optional columns include:
+
+		- **Default** – specifies a default value for the attribute.
+		- **Description** – provides the purpose, usage context, or other helpful details about the attribute.
+		- **Example** – provides a sample value.
+		- **Mandatory** – indicates whether the attribute is required. It does not perform any validation and is intended for informational purposes only. 
+	
+		These optional columns can appear in any combination and order.
+	
+ 	-  If the table contains only the Type and Name columns, or Type, Name, and Default, column headers are not required.
+	- If the table includes any other columns (such as Description, Example, Mandatory, etc.), then column headers are required to clearly identify each column.
 
 Consider the case when a hierarchical logical data structure must be created. The following example of a Datatype table defines a custom data type called **Person**. The table represents a structure of the **Person** data object and combines **Person’s** data elements, such as name, social security number, date of birth, gender, and address.
 
@@ -1103,15 +1114,26 @@ During execution, the system takes default values from FinancialData data type.
 
 **Note:** A default value can be defined for String fields of the Datatype table by assigning the "" empty string.
 
+![](ref_guide_images/DatatypeWithOptionalColumns.png)
+
+*Example of a datatype table with required and optional columns*
+
 For more information on using runtime context properties in Datatype tables, see [Runtime Context Properties in Datatype Tables](#runtime-context-properties-in-datatype-tables).
 
-Datatype table output results can be customized the same way as spreadsheets as described in [Spreadsheet Result Output Customization](#spreadsheet-result-output-customization).
+Datatype table output results can be customized the same way as spreadsheets as described in [Spreadsheet Result Output Customization](#spreadsheet-result-output-customization). 
 	
 If a spreadsheet returns a data type rather than SpreadsheetResult and the attributes of this data type must be filtered, that is, included or excluded from the final output structure, attributes of this data type must be marked with ~ or *. An example is available in [Introducing Datatype Tables](https://openldocs.readthedocs.io/en/latest/documentation/guides/reference_guide/#introducing-datatype-tables).
 	
 ![](ref_guide_images/EPBDS-10058_3.png)
 
 *Filtering data type attributes for the output structure*
+
+If a datatype is used as an input or output in a rule exposed as an API endpoint, its Description and Example fields — if provided — will be shown in the API specification.
+
+<img src="ref_guide_images/SchemaExample_DatatypeWithOptionalColumns.png" alt="SchemaExample_DatatypeWithOptionalColumns" width="400"/>
+
+![](ref_guide_images/Schema_DatatypeWithOptionalColumns.png)
+
 
 ##### Inheritance in Data Types
 
@@ -1694,6 +1716,13 @@ The data type for each cell can be determined by OpenL Tablets automatically or 
 
 **Note:** If both column and row of the cell have a data type specified, the data type of the column is taken.
 
+<a name="spr_column_descirption"></a>
+To describe any column in a spreadsheet, a corresponding column must be added with the column header //\<columnName\>. The name following // must match the name of the column being described. Spaces are allowed in the headers of description columns. A simplified syntax may be used for referencing cells.
+
+![](ref_guide_images/RG_SR_Column_Description.png)
+
+*Formula Column Description*
+
 In OpenL Rule Services, spreadsheet output can be customized by adding or removing rows and columns to display as described in [Spreadsheet Result Output Customization](#spreadsheet-result-output-customization).
 
 The following topics are included in this section:
@@ -2096,6 +2125,23 @@ An output result for this spreadsheet is as follows.
 }
 ```
 	
+If the [description column](#spr_column_descirption) is marked with // it is excluded from the output schema but will still appear in the schema example.
+
+![](ref_guide_images/SpreadsheetWith::Value.png)
+
+![](ref_guide_images/StepsDescriptionInSchema.png)
+
+*Step descriptions added via //Value column* 
+
+**Note:** Rule descriptions included in API-exposed rules will appear in the OpenL Tablets Rule Services.
+
+![](ref_guide_images/SRDescriptionInOpenLStudio.png)
+
+![](ref_guide_images/SpreadsheetDescriptionInRuleServices.png)
+
+*Rule description displayed in OpenL Rule Services*
+
+
 **Note:** If the Maven plugin is used for generating a spreadsheet result output model, system integration can be based on generated classes. A default Java package for generated Java beans for particular spreadsheet tables is set using the spreadsheetResultPackage table property. Nevertheless, it is recommended to avoid any integration based on generated classes.
 
 ##### Testing Spreadsheet Result
@@ -4428,7 +4474,7 @@ This chapter provides a complete list of functions available in OpenL Tablets an
 | **getValues**(MyVocabularyDatatype)                                                                                                                                                              | Returns an array of values from the MyVocabularyDatatype vocabulary data type. <br/>Returns MyVocabularyDatatype[] .                                                                                                                                                                                                                                                                                                                                                                                           |         
 | **instanceOf**(Object, className.class)                                                                                                                                                          | Returns a Boolean value defining if the Object is of the specified class. This function is deprecated.                                                                                                                                                                                                                                                                                                                                                                                                   |         
 | **msg**(String code, Object... params)                                                                                                                                                          | Reads the localization message bundles in the i18n format. <br/>For more information on localization, see [Project Localization](#project-localization).                                                                                                                                                                                                                                                                                                                                                                                                 |         
-| **new** Datatype(value of attribute1, value of attribute2) <br/>or <br/>Datatype(value of attribute1, value of attribute2) <br/>or <br/>Datatype(attribute1 = value of attribute1, <br/>attribute2 = value of attribute2) <br/>or <br/>new Datatype(attribute1 = value of attribute1, <br/>attribute2 = value of attribute2) | Used to create an instance of the datatype. <br/>Values must be comma-separated and listed in the same order in which the appropriate fields are defined <br/>in the datatype. <br/>The word **new** can be omitted. Alternatively, a form with parameter enumeration can be used. <br/>Parameters can be listed in any order and it is not required to specify all the parameters. <br/>**Note:** When there is a datatype and method, DT or Spr, with the same name and number of parameters, <br/> method call and constructor call with the omitted "new" keyword have exactly the same syntax.<br/>In this case, the method call is selected. <br/>**Examples:** <br/>**`new Person("John", "Smith", 24)` `or ` `Person("John", "Smith", 24)` `or ` `Person(firstname= "John")` `or ` `new Person(firstname= "John")` `or ` `Person()`|         |
+| **new** Datatype(value of attribute1, value of attribute2) <br/>or <br/>Datatype(value of attribute1, value of attribute2) <br/>or <br/>Datatype(attribute1 = value of attribute1, <br/>attribute2 = value of attribute2) <br/>or <br/>new Datatype(attribute1 = value of attribute1, <br/>attribute2 = value of attribute2) | Used to create an instance of the datatype. <br/>Values must be comma-separated and listed in the same order in which the appropriate fields are defined <br/>in the datatype. <br/>The word **new** can be omitted. Alternatively, a form with parameter enumeration can be used. <br/>Parameters can be listed in any order and it is not required to specify all the parameters. <br/>**Note:** When there is  and method, DT or Spr, with the same name and number of parameters, <br/> method call and constructor call with the omitted "new" keyword have exactly the same syntax.<br/>In this case, the method call is selected. <br/>**Examples:** <br/>**`new Person("John", "Smith", 24)` `or ` `Person("John", "Smith", 24)` `or ` `Person(firstname= "John")` `or ` `new Person(firstname= "John")` `or ` `Person()`|         |
 | **new** Datatype[] {}                                                                                                                                                                            | Used to create a data array. <br/>The number in the square brackets [] denotes the size of the array, for example, `new String[10]`. <br/>If no number is provided, an empty array is created, for example, `new String[].` <br/>Values in the braces {} define the values of the appropriate array elements. <br/>**Example:** `new Integer[]{1,8,12}`                                                                                                                                                                    |         
 | **toString**(value)                                                                                                                                                                              | Converts value to the string.                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
 
