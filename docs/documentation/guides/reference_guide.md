@@ -1043,24 +1043,29 @@ For more information on creating vocabulary for data elements, see [Vocabulary D
 A Datatype table has the following structure:
 
 1.  The first row is the header containing the **Datatype** keyword followed by the name of the data type.
-2.  Every row, starting with the second one, represents one attribute of the data type. Each attribute must include the following **required** columns:
+2.  Each row after the declaration defines one attribute. The structure of these rows depends on whether column headers are used. The presence of column headers depends on the number and type of columns used for attributes:
+   
+	|  Columns Used                                                  | Column Headers Required |
+	| -------------------------------------------------------------- | ----------------------- |
+	| Type, Name                                                     | No                      |
+	| Type, Name, Default                                            | No                      |
+	| Any additional columns (e.g., Description, Example, Mandatory) | Yes                     |
     
-	- The first column contains the **Type** of the attribute.
-	- The second column contains the corresponding attribute **Name**.
-	
-	**Note:** While there are no special restrictions, usually an attribute type starts with a capital letter and attribute name starts with a small letter.
+**Required Columns:**
+ 
+* **Type**: Data type of the attribute.
+* **Name**: Name of the attribute.
+    
+**Note**: While there are no special restrictions, usually an attribute type starts with a capital letter and attribute name starts with a small letter.
 
-	- Starting from the third column, all columns are optional and may be used to provide additional information about each attribute. Optional columns include:
+**Optional Columns:**
 
-		- **Default** – specifies a default value for the attribute.
-		- **Description** – provides the purpose, usage context, or other helpful details about the attribute.
-		- **Example** – provides a sample value.
-		- **Mandatory** – indicates whether the attribute is required. It does not perform any validation and is intended for informational purposes only. 
-	
-		These optional columns can appear in any combination and order.
-	
- 	-  If the table contains only the Type and Name columns, or Type, Name, and Default, column headers are not required.
-	- If the table includes any other columns (such as Description, Example, Mandatory, etc.), then column headers are required to clearly identify each column.
+* **Default**: Specifies a default value for the attribute.
+* **Description**: Provides context, purpose, or usage information.
+* **Example**: Gives a sample value to illustrate typical input.
+* **Mandatory**: Indicates whether the attribute is required. It does not perform any validation and in inteded for informational purposes only. This field accepts Boolean values exclusively. 
+
+**Note:** When column headers are present, all columns in a Datatype table may appear in any order. Optional columns can be included in any combination.
 
 Consider the case when a hierarchical logical data structure must be created. The following example of a Datatype table defines a custom data type called **Person**. The table represents a structure of the **Person** data object and combines **Person’s** data elements, such as name, social security number, date of birth, gender, and address.
 
@@ -1106,12 +1111,6 @@ During execution, the system takes default values from FinancialData data type.
 
 **Note:** For array types \_DEFAULT_creates an empty array.
 
-**Note:** It is strongly recommended to leave an empty column right after the third column with default values if such column is used. Otherwise, in case the data type has 3 or less attributes, errors occur due to transposed tables support in OpenL Tablets.
-
-![](ref_guide_images/2d34aa03d4b3b8567eabc55f03dbca18.png)
-
-*Datatype table with comments nearby*
-
 **Note:** A default value can be defined for String fields of the Datatype table by assigning the "" empty string.
 
 ![](ref_guide_images/DatatypeWithOptionalColumns.png)
@@ -1128,11 +1127,20 @@ If a spreadsheet returns a data type rather than SpreadsheetResult and the attri
 
 *Filtering data type attributes for the output structure*
 
-If a datatype is used as an input or output in a rule exposed as an API endpoint, its Description and Example fields — if provided — will be shown in the API specification.
+If a datatype is used as an input or output in a rule exposed as an API endpoint, its optional fields — if provided — will be shown in the API specification.
+
+![](ref_guide_images/DatatypeWithOptionalColumns.png) 
 
 <img src="ref_guide_images/SchemaExample_DatatypeWithOptionalColumns.png" alt="SchemaExample_DatatypeWithOptionalColumns" width="400"/>
 
-![](ref_guide_images/Schema_DatatypeWithOptionalColumns.png)
+![](ref_guide_images/Datatatype_Schema_WithDefaults.png)
+
+*Example of how values from a Datatype table are displayed in the API schema.*
+
+- Example values are retrieved from the Example column and used to illustrate the expected data format for each attribute.
+- Descriptions are extracted from the Description column, as shown in the Schema screenshot. These are displayed in the API schema to provide additional context for each field.
+- Default value, along with a list of Allowed values (when applicable), is presented within a collapsible section under an expandable arrow icon.
+- Fields marked as Mandatory are indicated with an asterisk (*) in the schema view, helping users identify required fields at a glance.
 
 
 ##### Inheritance in Data Types
