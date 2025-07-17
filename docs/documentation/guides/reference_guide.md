@@ -1,4 +1,4 @@
-# OpenL Tablets BRMS Reference Guide
+<img width="468" height="23" alt="image" src="https://github.com/user-attachments/assets/3552d4a7-81e4-41cb-87d7-b9f46a95b1eb" /><img width="468" height="23" alt="image" src="https://github.com/user-attachments/assets/e42e5796-cf41-41b4-af0b-6bb238dab664" /># OpenL Tablets BRMS Reference Guide
 
 ## Preface
 
@@ -1056,7 +1056,7 @@ A Datatype table has the following structure:
 	* **Default**: Specifies a default value for the attribute.
 	* **Description**: Provides context, purpose, or usage information.
 	* **Example**: Gives a sample value to illustrate typical input.
-	* **Mandatory**: Indicates whether the attribute is required. It does not perform any validation and is inteded for 		informational purposes only. This field accepts Boolean values exclusively.
+	* **Mandatory**: Indicates whether the attribute is required. It does not perform any validation and is inteded for informational purposes only. This field accepts Boolean values exclusively.
 
 	The presence of column headers in datatype table depends on the number and type of columns used for attributes.
    
@@ -1129,13 +1129,13 @@ If a spreadsheet returns a data type rather than SpreadsheetResult and the attri
 
 *Filtering data type attributes for the output structure*
 
-If a datatype is used as an input or output in a rule exposed as an API endpoint, its optional fields — if provided — will be shown in the API specification.
+If a datatype is used as an input or output in a rule exposed as an API endpoint, its optional fields — if provided — are shown in the API specification.
 
-![](ref_guide_images/DatatypeWithOptionalColumns.png) 
+![](ref_guide_images/DatatypeVehicleWithAdditionalColumns.png)
 
-<img src="ref_guide_images/SchemaExample_DatatypeWithOptionalColumns.png" alt="SchemaExample_DatatypeWithOptionalColumns" width="400"/>
+<img src="ref_guide_images/DatatatypeVehicleSchemaExample.png" alt="DatatatypeVehicleSchemaExample" width="300"/>
 
-![](ref_guide_images/Datatatype_Schema_WithDefaults.png)
+<img src="ref_guide_images/DatatypeVehicleSchema.png" alt="DatatypeVehicleSchema" width="600"/>
 
 *Example of how values from a Datatype table are displayed in the API schema.*
 
@@ -1726,12 +1726,12 @@ The data type for each cell can be determined by OpenL Tablets automatically or 
 
 **Note:** If both column and row of the cell have a data type specified, the data type of the column is taken.
 
-<a name="spr_column_descirption"></a>
-To describe any column in a spreadsheet, a corresponding column must be added with the column header //\<columnName\>. The name following // must match the name of the column being described. Spaces are allowed in the headers of description columns. A simplified syntax may be used for referencing cells.
+<a name="spr_column_description"></a>
+To provide descriptions for spreadsheet columns, you can add a dedicated description column with a header in the format //<ColumnName>. The name following // must exactly match the header of the column being described. Description columns allow spaces in their headers and are used solely to explain the purpose or meaning of data columns.
 
 ![](ref_guide_images/RG_SR_Column_Description.png)
 
-*Formula Column Description*
+*Formula column description*
 
 In OpenL Rule Services, spreadsheet output can be customized by adding or removing rows and columns to display as described in [Spreadsheet Result Output Customization](#spreadsheet-result-output-customization).
 
@@ -1777,7 +1777,7 @@ or
 
 `$<column name>$<row name>(<spreadsheet result variable>)`
 
-If a spreadsheet has one column only, besides the column holding step names, spreadsheet cells can be referenced by row names. If there is one row and multiple columns, a cell can be referenced by the column name.
+If a spreadsheet has one column only, besides the column holding step names and any description columns marked with //, spreadsheet cells can be referenced by row names. If there is one row and multiple columns, a cell can be referenced by the column name.
 
 ![](ref_guide_images/bc3aae72a1f92cc0e10c330b39aada46.png)
 
@@ -2130,20 +2130,21 @@ An output result for this spreadsheet is as follows.
 
 ```
 {
-  "BankID": "commerz",
+  "BankID": "commerz",<img width="468" height="23" alt="image" src="https://github.com/user-attachments/assets/6d1fc0a9-d10d-476c-85e6-c3529998de3f" />
+
   "Limit": 5000
 }
 ```
 	
-If the [description column](#spr_column_descirption) is marked with // it is excluded from the output schema but will still appear in the schema example.
+If the [description column](#spr_column_description) is marked with // it is dispalyed as field property in the JSON structure. However, the steps listed in this column are excluded from the schema tree representation.
 
 ![](ref_guide_images/SpreadsheetWith::Value.png)
 
 ![](ref_guide_images/StepsDescriptionInSchema.png)
 
-*Step descriptions added via //Value column* 
+*Step descriptions added via //\<ColumnName\> column* 
 
-**Note:** Rule descriptions included in API-exposed rules will appear in the OpenL Tablets Rule Services.
+**Note:** Rule descriptions included in API-exposed rules will appear in the OpenL Tablets Rule Services. If multiple versions of a rule are available, the selection is made randomly from those that contain non-empty descriptions.
 
 ![](ref_guide_images/SRDescriptionInOpenLStudio.png)
 
