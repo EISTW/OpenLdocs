@@ -1727,11 +1727,11 @@ The data type for each cell can be determined by OpenL Tablets automatically or 
 **Note:** If both column and row of the cell have a data type specified, the data type of the column is taken.
 
 <a name="spr_column_description"></a>
-To provide descriptions for spreadsheet columns, you can add a dedicated description column with a header in the format //<ColumnName>. The name following // must exactly match the header of the column being described. Description columns allow spaces in their headers and are used solely to explain the purpose or meaning of data columns.
+Descriptions for spreadsheet columns can be provided by adding a dedicated **description column** with a header in the format //\<ColumnName>\. The name following // must exactly match the header of the column being described. Description columns allow spaces in their headers.
 
-![](ref_guide_images/RG_SR_Column_Description.png)
+![](ref_guide_images/SpreadsheetDesriptionColumn.png)
 
-*Formula column description*
+*Value column description*
 
 In OpenL Rule Services, spreadsheet output can be customized by adding or removing rows and columns to display as described in [Spreadsheet Result Output Customization](#spreadsheet-result-output-customization).
 
