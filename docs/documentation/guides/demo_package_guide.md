@@ -58,7 +58,7 @@ The Demo is designed to work out-of-the-box with a smart default configuration.
   * Uses its own internal **H2 database** to store user settings, so no external database is needed.
   * All your work (projects, settings) is stored locally in the `openl-demo/` subfolder.
   * Comes with a pre-initialized local 'design' **Git repository** containing examples and tutorials, located at `openl-demo/repositories/design/`.
-  * Comes with a pre-initialized local 'deployment' **Git repository** for connecting with the Rule Services, located at `openl-demo/repositories/deployment/`.
+  * Comes with a pre-initialized local 'deployment' repository for connecting with the Rule Services, located at `openl-demo/repositories/deployment/`.
 
 ### Rule Services
 
@@ -81,8 +81,8 @@ Find the **`start`** file and double-click it.
 
 Or open your terminal, navigate into the unzipped Demo folder, and run the following command:
 
-```sh
-sh start
+```bash
+bash start
 ```
 
 *(Note: On some systems, you may need to grant execute permissions to the file first with the command `chmod +x start`)*
@@ -106,7 +106,7 @@ The easiest way to enable this feature is to create a specific folder on your De
 
 *For terminal users on MacOS, Linux or Windows, you can run this command:*
 
-```sh
+```bash
 mkdir "$HOME/Desktop/OpenL_Home"
 ```
 
@@ -234,7 +234,7 @@ The **OpenL Demo** package is more than just a trial version; it’s a practical
 
 A standard setup for using OpenL Tablets involves two main steps:
 
-1.  **Deploy Components**: Install **OpenL Studio**, **OpenL Rule Services**, and your **Git Repository** on a server.
+1.  **Deploy Components**: Install **OpenL Studio**, **OpenL Rule Services**, and **Database** on a server.
 2.  **Configure the Connection**: Set up both **OpenL Studio** and **OpenL Rule Services** to use the same **`deployment`** repository.
 
 The most critical step is ensuring the **`deployment` repository** is configured identically in both applications. You can inspect the configuration files inside the Demo package as a working example of how to do this correctly.
