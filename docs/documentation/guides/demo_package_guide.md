@@ -180,20 +180,6 @@ As OpenL Studio is preconfigured in a single user mode, and all projects in Repo
 
 *The whole list of rules projects in Repository of the Demo package*
 
-#### Administration
-
-By default, user workspace, history, and design repository are configured as local and located in the `openl-demo` folder of the `<unzipped Demo package folder>\jetty-home-10.0.xx\` directory. This setting simplifies configuration and usage of the Demo package. Note that a default directory can be changed to another one as described in [OpenL Studio Guide > Managing System Settings](https://openldocs.readthedocs.io/en/latest/documentation/guides/webstudio_user_guide/#managing-system-settings).
-
-![](demo_guide_images/d4e08c04cc55071f60b74c3508b1e274.png)
-
-*Common system settings in Administration*
-
-Deployment Repository is set to use the Database (JDBC) connection. An appropriate URL `jdbc:h2:./openl-demo/repositories/deployment/db;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=20` is configured by default and defined in the OpenL Studio `webstudio.properties` file in the `<unzipped Demo package folder>\jetty-home-10.0.xx\` folder.
-
-![](demo_guide_images/e431646eb5b545f6625b9f828f1c2dcb.png)
-
-*Settings of Design and Deployment repositories in Administration*
-
 ### OpenL Rule Services in a Demo Project
 
 By default, a project from the “Example 3 – Auto Policy Calculation” template is deployed to Deployment Repository from OpenL Studio by a startup script.
