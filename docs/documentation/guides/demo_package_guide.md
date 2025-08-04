@@ -164,7 +164,7 @@ The following topics are included:
 
 Several examples and tutorials are already in the **No Changes** status, therefore available in **Rules Editor** by default. For more information on how to manage rules in Rules Editor, see [OpenL Studio Guide > Using Rules Editor](https://openldocs.readthedocs.io/en/latest/documentation/guides/webstudio_user_guide/#using-rules-editor).
 
-![](demo_guide_images/3d9e3c989ff6649c2a9c99be85d8452b.png)
+![](demo_guide_images/demo_studio_editor.png)
 
 *Projects in Rules Editor available for editing*
 
@@ -176,7 +176,7 @@ The “Example 3 – Auto Policy Calculation” project is already deployed usin
 
 As OpenL Studio is preconfigured in a single user mode, and all projects in Repository are created and modified by the “DEFAULT” user.
 
-![](demo_guide_images/de34b4ee4b573302af007b841d1eb191.png)
+![](demo_guide_images/demo_studio_projects.png)
 
 *The whole list of rules projects in Repository of the Demo package*
 
@@ -186,7 +186,7 @@ By default, a project from the “Example 3 – Auto Policy Calculation” templ
 
 To use this project as an example of project deployments as described in [OpenL Rule Services Demo Client in a Demo Package](#openl-tablets-rule-services-demo-client-in-a-demo-package), several settings are defined in Rules Configuration of the project. It is set up that only \*DriverRisk\*, \*DriverAgeType\*, \*AccidentPremium\* are wildcards, and rules are included and can be used from the OpenL Tablets Rule Services Demo Client application.
 
-![](demo_guide_images/5f418d078e1bfd1052ae98c493d89d68.png)
+![](demo_guide_images/demo_ruleservices_ui.png)
 
 *OpenL Rule Services main page and the project deployed on it*
 
@@ -202,7 +202,7 @@ OpenL Rule Services Demo Client application is an application specially created 
 
 OpenL Rule Services Demo Client application allows to define a driver type by age and gender, get premium per accident, or determine how risky a driver is according to business rules specified in the “Example 3 – Auto Policy Calculation” project.
 
-![](demo_guide_images/21a9535e63bf7b98584101d6090341fa.png)
+![](demo_guide_images/demo_client_ui.png)
 
 *Executing DriverAgeType rule and getting results via OpenL Rule Services Demo Client*
 
