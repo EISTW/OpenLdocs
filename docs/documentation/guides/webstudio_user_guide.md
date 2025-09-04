@@ -2926,9 +2926,9 @@ The System tab enables modifying core, project, and testing options and includes
 
 ### Managing User Information
 
-This section describes how to control user access in the OpenL Studio application based on users and user groups. All privileges in the system are assigned at a group level and will be granted to a particular user after he or she is included in a particular group.
+This section describes how to control user access in the OpenL Studio application based on users and user groups. All privileges are assigned in one of two ways: at the group level, where a user gains access by being added to a group through a third-party identity provider, or at the individual user level, when no such integration is available.
 
-Users and groups are managed in the **Users** and **Groups & Privileges** tabs. Only members of the **Administrators** group have rights to manage users and groups in OpenL Studio.
+Users and groups are managed in the **Users** or **Groups** tabs. Only users with the **Administrator** access rights can manage users and groups in OpenL Studio.
 
 The following topics are included in this section:
 
@@ -2937,7 +2937,9 @@ The following topics are included in this section:
 
 #### Managing Groups
 
-This section explains how to create, modify, and delete a user group with a certain set of privileges. The **Administrators** group cannot be deleted from the system.
+This section explains how to add, modify, and delete a user group with a certain set of privileges.
+
+To work with the groups, OpenL Studio must be installed with the option to sign in via a third party identity provider, such as SSO or Active Directory. Groups added and edited in OpenL Studio must have the same names as available in Active Directory or SSO groups.
 
 The following topics are included in this section:
 
@@ -2951,87 +2953,89 @@ The following topics are included in this section:
 
 To view a list of groups, proceed as follows:
 
-1.  In the **ADMIN** tab, click **Groups & Privileges**.
+1.  In the **Adminisration** view, click **Groups**.
     
     The system displays a list of groups similar to the following one:
     
-    ![](webstudio_guide_images/57a30f5b0d7de4ae821098ab307a52e0.jpeg)
+    ![](webstudio_guide_images/GroupsViewTab.png)
     
-    *User groups in the* **Groups & Privileges** *tab*
+    *List of groups in the* **Groups** *tab*
     
-1.  To create a new group, proceed as described in [Adding a Group](#adding-a-group).
+1.  To add a new group, proceed as described in [Adding a Group](#adding-a-group).
 2.  To edit a group, proceed as described in [Editing a Group](#editing-a-group).
 3.  To delete an existing group, proceed as described in [Deleting a Group](#deleting-a-group).
-
-##### Adding a Group
-
-To add a new group, proceed as follows:
-
-1.  Click the **Add New Group** link.
-    
-    The **Add New Group** form appears.
-    
-1.  Enter the group name in the **Name** field.
-2.  Optionally, provide group description in the **Description** text box.
-3.  In the **Privilege** area, define the privileges as needed.
-    
-    To assign a set of privileges for a group, click the group name above the list of privileges, such as Developers, Testers, or Administrators. The **Authenticated** default group with the **Viewer** privilege is created if the **All authenticated users have View access** check box is selected in the installation wizard. The group is displayed in the user table if no other groups are assigned to this user.
-    
-    ![](webstudio_guide_images/b3f34ff98d6e111209332e0252ed93fb.png)
-    
-    *Adding a user group with required set of privileges*
-    
-1.  Click **Save**.
-
-##### Editing a Group
-
-To modify a user group, proceed as follows:
-
-1.  In the list of groups, locate the group that needs to be changed and click the **Edit** icon ![](webstudio_guide_images/d3ea5213930b8049e191654119114d07.png).
-2.  In the **Edit Group** form, change the group name, add or modify its description, and change privileges as needed.
-3.  Click **Save** to complete.
-
-##### Deleting a Group
-
-To delete a user group, proceed as follows:
-
-1.  Locate the group to be deleted and click the red cross on the right: ![](webstudio_guide_images/0fda9cdfad6951b6b2345913d0045c36.png).
-2.  Click **OK** in the confirmation dialog.
-
-##### Managing a Group in Case of Third Party Identity Provider
-
-If OpenL Studio is installed with the option to sign in via a third party identity provider, such as SSO or Active Directory, groups created and edited in OpenL Studio must have the same names as available in Active Directory or SSO groups.
 
 When a user from the third-party server logs into OpenL Studio, external user groups are pulled from the external server and displayed in the OpenL Studio user table.
 
 -   If an external group cannot be matched with the OpenL Studio group, that is, no group with such name exists in OpenL Studio, the group is displayed as a collapsed number, for example, +1, and when the value is expanded, the group is highlighted grey.
     
-    ![](webstudio_guide_images/ee4a2bedc13ee312f08f2b364d1c3af3.png)
-    
+    ![](webstudio_guide_images/CollapsedGroups.png)
+
     *Groups non-existing in OpenL Studio displayed as collapsed numbers*
+
+   ![](webstudio_guide_images/GroupsExpanded.png)
+   
+   *Groups non-existing in OpenL Studio displayed as expanded list*
     
     Groups highlighted blue are internal OpenL Studio groups.
     
 -   If an external group is matched with the OpenL Studio group but it does not have the Administrator privilege assigned, the group is highlighted green.
     
-    ![](webstudio_guide_images/baeffab9dc6ae249ccc19093751707a5.png)
+    ![](webstudio_guide_images/GreenUserGroup.png)
     
     *Groups without the administrative privilege matched with the OpenL Studio groups*
     
 -   If a group has the Administrator privilege, the group is highlighted red in the user table.
     
-    ![](webstudio_guide_images/6d6a6bca6559eacb1c0e413629e717cf.png)
+    ![](webstudio_guide_images/RedAdminUserGroup.png)
     
-    *Groups without the administrative privilege matched with the OpenL Studio groups*
+    *Groups with the administrative privilege matched with the OpenL Studio groups*
 
 After each user login, OpenL Studio updates external groups as follows:
 
 -   If a user got a new group, it is added to the table.
 -   If a group is revoked from this user, it is deleted from the table.
 
-External groups are checked and disabled for editing in the **Edit user** popup window. Administrators can add an additional group to a user, except for SSO CAS/SAML external user management.
+When clicking on the group name, **Edit Group** side panel appears where administrators can make updates to the group. See details in the [Editing a Group](#editing-a-group) section.
 
-Administrators cannot revoke the external group.
+##### Adding a Group
+
+To add a new group, proceed as follows:
+
+1.  Click the **Invite group** button.
+    
+    The **Invite Group** side panel appears.
+    
+1.  Enter the group name in the **Name** field as it appears in the configured identity provider (SSO/AD). The group must already exist there.
+2.  Optionally, provide group description in the **Description** text box.
+3.  Optionally, select the **Admin** checkbox to assign admin rights to the group.
+4.  Assign access rights in the **Access Rights** section:
+    4.1 Select a scope tab: Design Repositories, Deploy Repositories, or Projects depending on the level of the access rights that must be provided.
+    4.2 In the selected tab, choose the target from the left list. For example, choose a repository or a specific project on the related tabs.
+    4.3 From the right list, select the role to grant. Ffor example, Viewer.
+    4.4 To add another target–role pair, select **+ Add Role** and repeat.
+    4.5 To remove an entry, select the **Remove** icon on that row.
+5. Select **Invite** to create the group with the configured rights.
+    
+##### Editing a Group
+
+To modify a user group, proceed as follows:
+
+1.  In the list of groups, locate the group that needs to be changed and click the **Edit** icon.
+2.  In the **Edit Group** form, change the group name, add or modify its description, and change privileges as needed. Ensure that the Name matches an existing group in the configured identity provider (SSO/AD).
+
+![](webstudio_guide_images/EditGroup.png)
+
+***Edit Group** view*
+
+3.  Click **Save** to complete.
+
+##### Deleting a Group
+
+To delete a user group, proceed as follows:
+
+1.  Locate the group to be deleted and click the delete icon on the right.
+2.  Click **OK** in the confirmation dialog.
 
 #### Managing Users
 
@@ -3144,11 +3148,11 @@ To delete a user, proceed as follows:
 
 There are some differences in managing users when OpenL Studio is installed with an option to sign in with a third party identity provider, such as SSO or Active Directory.
 
-An external user is created in OpenL Studio upon first user logon using the credentials stored in the third party identity provider, and it is not required to create a user in OpenL Studio in advance. All corresponding user information, such as first name, last name, display name, and email address, is retrieved from the third party and saved to the OpenL Studio, locked for editing. If some part of this information is not received from the third party, the corresponding fields are available for editing in OpenL Studio. An exception is external user management for SSO, where user data cannot be edited in **Admin \> Users** and only part of data can be edited in the user details section.
+An external user is created in OpenL Studio upon first user logon using the credentials stored in the third party identity provider, and it is not required to create a user in OpenL Studio in advance. All corresponding user information, such as username, full name, email address, and groups, is retrieved from the third party and saved to the OpenL Studio, locked for editing. If some part of this information is not received from the third party, the corresponding fields are available for editing in OpenL Studio. An exception is external user management for SSO, where user data cannot be edited in **Admin \> Users** and only part of data can be edited in the user details section.
 
 If a user is first created in OpenL Studio as internal or external, and for logon, OpenL Studio username and third party password are used, a user becomes external, and only third party password stays valid. After such logon, synchronization with the third party is performed, information stored in OpenL Studio is overwritten by third party data information, and the corresponding fields are locked for editing. Exceptions are as follows:
 
--   If the third party email address, first name, or last name value is empty or unavailable, the current email address, first name, or last name is not emptied.
+-   If the third-party email address or full name is empty or unavailable, the corresponding value in OpenL Studio is not cleared..
 -   If the display name value is empty or unavailable, the local display name is not modified.
 
 An exception is the situation when the first or last name was changed.
@@ -3160,9 +3164,7 @@ An exception is the situation when the first or last name was changed.
 
 If this user was not created as a local user previously but instead, created upon the external user logon, the display name value stays empty.
 
-User permissions can be assigned locally in OpenL Studio. Alternatively, to retrieve permissions from a third party identity provider, in OpenL Studio, create a user group with the same name as in third party and grant the required permissions to it. It is not required that the group is manually assigned to the user in OpenL Studio. Also, additional user groups can be assigned to a user in OpenL Studio unless the SSO external user management was set up.
-
-**Note:** When creating a user, the username in OpenL Studio must match the username in the third party identity provider.
+User permissions can be assigned personally to the user in OpenL Studio. Alternatively, to retrieve permissions granted by belonging to a third party identity provider group, user must be excluded from a related group. Groups are not assigned manually to the user in OpenL Studio.
 
 ### Managing Notifications
 
@@ -3576,3 +3578,4 @@ Internal API documentation for OpenL Studio is available at <http://localhost:80
 Release 5.27
 OpenL Tablets Documentation is licensed under a Creative Commons Attribution 3.0 United States License. 
 ```
+
