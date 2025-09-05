@@ -2953,7 +2953,7 @@ The following topics are included in this section:
 
 To view a list of groups, proceed as follows:
 
-1.  In the **Adminisration** view, click **Groups**.
+1.  In the **Administration** view, click **Groups**.
     
     The system displays a list of groups similar to the following one:
     
@@ -3010,12 +3010,18 @@ To add a new group, proceed as follows:
 2.  Optionally, provide group description in the **Description** text box.
 3.  Optionally, select the **Admin** checkbox to assign admin rights to the group.
 4.  Assign access rights in the **Access Rights** section:
+   
     4.1 Select a scope tab: Design Repositories, Deploy Repositories, or Projects depending on the level of the access rights that must be provided.
+    
     4.2 In the selected tab, choose the target from the left list. For example, choose a repository or a specific project on the related tabs.
-    4.3 From the right list, select the role to grant. Ffor example, Viewer.
+    
+    4.3 From the right list, select the role to grant. For example, Viewer.
+    
     4.4 To add another target–role pair, select **+ Add Role** and repeat.
+    
     4.5 To remove an entry, select the **Remove** icon on that row.
-5. Select **Invite** to create the group with the configured rights.
+    
+6. Select **Invite** to create the group with the configured rights.
     
 ##### Editing a Group
 
@@ -3054,7 +3060,7 @@ By default, there are the following users in OpenL Studio predefined in Demo mod
 | a1        | a1            | Administrators       |
 | admin     | admin         | Administrators       |
 
-On the first start of OpenL Studio in the multi user mode, users with administrator permissions are defined in the installation wizard, **Configure initial users** section, **Administrators** field. Administrators password is set equal to their username and can be changed later as necessary. Administrators can then create new users or update existing users in OpenL Studio as needed. For information about the permissions of the groups, refer to [Managing Groups](#managing-groups).
+On the first start of OpenL Studio in the multi user mode, users with administrator permissions are defined in the installation wizard, **Configure initial users** section, **Administrators** field. Administrators' password is set equal to their username and can be changed later as necessary. List of Adminstrators can be updated later on the **Security** tab. Administrators can then create new users or update existing users in OpenL Studio as needed. For information about the permissions of the groups, refer to [Managing Groups](#managing-groups).
 
 The following topics are included in this section:
 
@@ -3068,7 +3074,7 @@ The following topics are included in this section:
 
 To view a list of users, proceed as follows:
 
-1.  In the **ADMIN** tab, click **Users** on the left.
+1.  In the **Administration** view, click **Users** on the left.
     
     The system displays a list of OpenL Studio users.
     
@@ -3079,19 +3085,15 @@ To view a list of users, proceed as follows:
 
 ##### Creating a User
 
-While creating a user, make sure to include the user in at least one group. Proceed as follows:
+While creating a user, proceed as follows:
 
-1.  Click the **Add New User** link.
+1.  Click the **Add User** button.
     
-    The system displays the **Add New User** form.
+    The system displays the **Add New User** side panel.
     
     ![](webstudio_guide_images/2a82416bdc26b5badb9f4f0257104a6d.png)
     
     *Creating a user*
-    
-1.  To create a user locally, ensure that the **Local user** check box is selected.
-    
-    This option is selected by default. For local users, password information is stored in OpenL Tablets Web Studio and third party system user data is not used. This check box is available only if the Active Directory user mode and internal user management option are selected.
     
 1.  Specify the user’s login name in the **Username** field.
 2.  Optionally, enter the user email.
@@ -3112,8 +3114,19 @@ While creating a user, make sure to include the user in at least one group. Proc
     
     If the **Other** option is selected, the field becomes editable and any display name can be entered.
     
-1.  Select one or more groups to assign the user to.
-2.  Click **Save** to complete.
+1.  Assign access rights in the **Access Rights** section:
+   
+    7.1 Select a scope tab: Design Repositories, Deploy Repositories, or Projects depending on the level of the access rights that must be provided.
+    
+    7.2 In the selected tab, choose the target from the left list. For example, choose a repository or a specific project on the related tabs.
+    
+    7.3 From the right list, select the role to grant. For example, Viewer.
+    
+    7.4 To add another target–role pair, select **+ Add Role** and repeat.
+    
+    7.5 To remove an entry, select the **Remove** icon on that row.
+    
+3.  Click **Save** to complete.
 
 The system displays the new user in the **Users** list. If the username and password values are the same, an exclamation mark is displayed next to the username. A user can change the password to improve security.
 
@@ -3125,7 +3138,7 @@ The system displays the new user in the **Users** list. If the username and pass
 
 To edit a user, proceed as follows:
 
-1.  In the **Users** list, locate a user that needs to be modified and click the username.
+1.  In the **Users** list, locate a user that needs to be modified and click **Edit** (pencil) icon.
 2.  In the **Edit User** form, modify user data as required.
     
     The username and administrator’s privilege set up in the `security.administrators` property cannot be changed.
@@ -3135,7 +3148,7 @@ To edit a user, proceed as follows:
 
 ##### Deleting a User
 
-The **Administrators** group in OpenL Studio must contain at least one administrator user. That it, the only OpenL Studio administrator cannot be deleted.
+The **Administrators** group in OpenL Studio must contain at least one administrator user. The only OpenL Studio administrator cannot be deleted.
 
 Initial users created during OpenL Studio installation and the currently logged in user cannot be deleted as well.
 
@@ -3578,4 +3591,5 @@ Internal API documentation for OpenL Studio is available at <http://localhost:80
 Release 5.27
 OpenL Tablets Documentation is licensed under a Creative Commons Attribution 3.0 United States License. 
 ```
+
 
