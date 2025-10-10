@@ -1137,7 +1137,7 @@ The vocabulary data type is created as follows:
     
     The values can be of the indicated predefined data type only.
 
-In the example described in [Introducing Datatype Tables](#_Introducing_Datatype_Tables), the data type **Person** has an attribute **gender** of the **Gender** data type which is the following vocabulary data type.
+In the example described in [Introducing Datatype Tables](#introducing-datatype-tables), the data type **Person** has an attribute **gender** of the **Gender** data type which is the following vocabulary data type.
 
 ![](ref_guide_images/d31cf1400142f390ff11cf5381ba2af0.png)
 
@@ -1185,7 +1185,7 @@ An example of a data table containing an array of numbers is as follows.
 
 ##### Using Advanced Data Tables
 
-Advanced data tables are used for storing information of a complex structure, such as custom data types and arrays. For more information on data types, see [Datatype Table](#_Datatype_Table).
+Advanced data tables are used for storing information of a complex structure, such as custom data types and arrays. For more information on data types, see [Datatype Table](#datatype-table).
 
 1.  The first row of an advanced data table contains text in the following format:
     
@@ -2419,7 +2419,7 @@ For more information on system properties, see [OpenL Studio Guide](https://open
 
 #### Properties for a Particular Table Type
 
-Some properties are used just for particular types of tables. It means that they make sense just for tables of a special type and can be defined only for those tables. Almost all properties can be defined for [Decision Tables](#decision-table), except for the **Datatype Package** property intended for [Datatype Tables](#datatype-table), the **Scope** property used in [Properties Tables](#properties-table), the [**Auto Type Discovery**](#auto-type-discovery-usage) property used in [Spreadsheet Tables](#spreadsheet-table), and the **Precision** property designed for [Test Tables](#test-tables).
+Some properties are used just for particular types of tables. It means that they make sense just for tables of a special type and can be defined only for those tables. Almost all properties can be defined for [Decision Tables](#decision-table), except for the **Datatype Package** property intended for [Datatype Tables](#datatype-table), the **Scope** property used in [Properties Tables](#properties-table), the [**Auto Type Discovery**](#auto-type-discovery-usage) property used in [Spreadsheet Tables](#spreadsheet-table), and the **Precision** property designed for [Test Tables](#test-table).
 
 OpenL Tablets checks applicability of properties and produces an error if the property value is defined for table not intended to contain the property.
 
@@ -2823,7 +2823,7 @@ The following topics are included in this section:
 
 -   [Dev Properties List](#dev-properties-list)
 -   [Variation Related Properties](#variation-related-properties)
--   [Using the Precision Property in Testing](#precision-property-usage)
+-   [Using the Precision Property in Testing](#using-the-precision-property-in-testing)
 
 ##### Dev Properties List
 
