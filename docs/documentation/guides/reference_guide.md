@@ -1106,9 +1106,9 @@ During execution, the system takes default values from FinancialData data type.
 For more information on using runtime context properties in Datatype tables, see [Runtime Context Properties in Datatype Tables](#runtime-context-properties-in-datatype-tables).
 
 Datatype table output results can be customized the same way as spreadsheets as described in [Spreadsheet Result Output Customization](#spreadsheet-result-output-customization).
-	
+  
 If a spreadsheet returns a data type rather than SpreadsheetResult and the attributes of this data type must be filtered, that is, included or excluded from the final output structure, attributes of this data type must be marked with ~ or *. An example is available in [Introducing Datatype Tables](https://openldocs.readthedocs.io/en/latest/documentation/guides/reference_guide/#introducing-datatype-tables).
-	
+  
 ![](ref_guide_images/EPBDS-10058_3.png)
 
 *Filtering data type attributes for the output structure*
@@ -1137,7 +1137,7 @@ The vocabulary data type is created as follows:
     
     The values can be of the indicated predefined data type only.
 
-In the example described in [Introducing Datatype Tables](#_Introducing_Datatype_Tables), the data type **Person** has an attribute **gender** of the **Gender** data type which is the following vocabulary data type.
+In the example described in [Introducing Datatype Tables](#introducing-datatype-tables), the data type **Person** has an attribute **gender** of the **Gender** data type which is the following vocabulary data type.
 
 ![](ref_guide_images/d31cf1400142f390ff11cf5381ba2af0.png)
 
@@ -1185,7 +1185,7 @@ An example of a data table containing an array of numbers is as follows.
 
 ##### Using Advanced Data Tables
 
-Advanced data tables are used for storing information of a complex structure, such as custom data types and arrays. For more information on data types, see [Datatype Table](#_Datatype_Table).
+Advanced data tables are used for storing information of a complex structure, such as custom data types and arrays. For more information on data types, see [Datatype Table](#datatype-table).
 
 1.  The first row of an advanced data table contains text in the following format:
     
@@ -1872,7 +1872,7 @@ A united spreadsheet result can be used as an input parameter.
 
 -   If the united spreadsheet result is generated as a result of the rule returning spreadsheet results, the input parameter has the (SpreadsheetResultSpreadsheetName inputValueName) format. **Example:** SpreadsheetResultClaimCost claimCostCalc.
 -   If the united spreadsheet result is generated as a result of the ternary operation of by uniting spreadsheet cells, the input parameter has the (SRSpr1 & SRSpr2 ruleName) format.
-	
+  
 An example is as follows:
 
 ```
@@ -2029,7 +2029,7 @@ It is also possible to filter spreadsheet columns identifying the ones to be dis
 **Note:** If there is only one spreadsheet column marked as mandatory, its name in API is just **RowName.** If there is only one spreadsheet column left after exclusion besides the step column, its name in API is also just **RowName**.
 
 An example is as follows. 
-	
+  
 ![](ref_guide_images/EPBDS-13257_4.png)
 
 *A spreadsheet table with three columns*
@@ -2059,7 +2059,7 @@ An output result for this spreadsheet is as follows.
 Note that the step names are in the **ColumnName_RowName** format.
 
 An example of the same spreadsheet with one of the columns excluded using the tilda ~ sign is as follows.
-	
+  
 ![](ref_guide_images/EPBDS-13257_5.png)
 
 *A spreadsheet table with excluded column*
@@ -2080,9 +2080,9 @@ An output result for this spreadsheet is as follows.
 ```
 
 Note that the step names are in the **RowName** format because there is only one column left besides the **Step** column. 
-	
+  
 Now consider the following example that illustrates simultaneous usage of asterix in columns and steps.
-	
+  
 ![](ref_guide_images/EPBDS-13257_6.png)
 
 *A spreadsheet table with filtered columns and steps*
@@ -2095,7 +2095,7 @@ An output result for this spreadsheet is as follows.
   "Limit": 5000
 }
 ```
-	
+  
 **Note:** If the Maven plugin is used for generating a spreadsheet result output model, system integration can be based on generated classes. A default Java package for generated Java beans for particular spreadsheet tables is set using the spreadsheetResultPackage table property. Nevertheless, it is recommended to avoid any integration based on generated classes.
 
 ##### Testing Spreadsheet Result
@@ -2419,7 +2419,7 @@ For more information on system properties, see [OpenL Studio Guide](https://open
 
 #### Properties for a Particular Table Type
 
-Some properties are used just for particular types of tables. It means that they make sense just for tables of a special type and can be defined only for those tables. Almost all properties can be defined for [Decision Tables](#decision-table), except for the **Datatype Package** property intended for [Datatype Tables](#datatype-table), the **Scope** property used in [Properties Tables](#properties-table), the [**Auto Type Discovery**](#auto-type-discovery-usage) property used in [Spreadsheet Tables](#spreadsheet-table), and the **Precision** property designed for [Test Tables](#test-tables).
+Some properties are used just for particular types of tables. It means that they make sense just for tables of a special type and can be defined only for those tables. Almost all properties can be defined for [Decision Tables](#decision-table), except for the **Datatype Package** property intended for [Datatype Tables](#datatype-table), the **Scope** property used in [Properties Tables](#properties-table), the [**Auto Type Discovery**](#auto-type-discovery-usage) property used in [Spreadsheet Tables](#spreadsheet-table), and the **Precision** property designed for [Test Tables](#test-table).
 
 OpenL Tablets checks applicability of properties and produces an error if the property value is defined for table not intended to contain the property.
 
@@ -2479,7 +2479,7 @@ When dealing with almost equal rules of the same structure but with slight diffe
 2.  Repeat steps 1 and 2 if more rule versions are required.
 
 Now the rule can be called by its name from any place in the project or application. If there are multiple rules with the same name but different Business Dimension properties, OpenL Tablets reviews all rules and selects the corresponding one according to the specified context variables or, in developers’ language, by runtime context values.
-	
+  
 **Note: **When creating a versioned rule, keep the input parameter name exactly the same as in the original rule. This is required for backward compatibility.
 
 The following table contains a list of **Business Dimension** properties used in OpenL Tablets:
@@ -2509,7 +2509,7 @@ The table properties can be obtained using the following syntax:
 
 **Example:** Use setTime(date,0,0,0,0) for testing endRequestDate or expirationDate as follows:
 =setTime($properties.endRequestDate, 0, 0,0,0)  	
-	
+  
 **Note for experienced users:** A particular rule can be called directly regardless of its dimension properties and current runtime context in OpenL Tablets. This feature is supported by setting the ID property as described in [Dev Properties](#dev-properties), in a specific rule, and using this ID as the name of the function to call. During runtime, direct rule is executed avoiding the mechanism of dispatching between overloaded rules.
 
 For more information on using attributes for runtime context definition, see [Runtime Context Properties in Datatype Tables](#runtime-context-properties-in-datatype-tables).
@@ -2712,7 +2712,7 @@ PREMIUM_1 = RISK_PREMIUM + VEHICLE_PREMIUM + DRIVER_PREMIUM - BONUS_1, for state
 PREMIUM_2 = RISK_PREMIUM + VEHICLE_PREMIUM + DRIVER_PREMIUM - BONUS_2, for state #2
 ...
 PREMIUM_N = RISK_PREMIUM + VEHICLE_PREMIUM + DRIVER_PREMIUM - BONUS_N, for state #N
-														     
+                                 
 ```
 
 OpenL Tablets provides a more elegant solution for this case:
@@ -2823,7 +2823,7 @@ The following topics are included in this section:
 
 -   [Dev Properties List](#dev-properties-list)
 -   [Variation Related Properties](#variation-related-properties)
--   [Using the Precision Property in Testing](#precision-property-usage)
+-   [Using the Precision Property in Testing](#using-the-precision-property-in-testing)
 
 ##### Dev Properties List
 
@@ -3030,9 +3030,9 @@ When this test is launched, the first test case is passed because \|0.11121358 -
 OpenL Tablets allows specifying precision for a particular column which contains expected result values using the following syntax:
 
 ```
-	_res_ (N)
-	_res_.$<ColumnName>$<RowName> (N)
-	_res_.<attribute name> (N)
+  _res_ (N)
+  _res_.$<ColumnName>$<RowName> (N)
+  _res_.<attribute name> (N)
 ```
 
 An example of the table using shortcut definition is as follows.
@@ -3124,11 +3124,11 @@ A template for this example is as follows: `.*-%lob%-.*-%effectiveDate:ddMMyyyy%
 *Custom file name processor class*
 
 #### Properties Defined in the Folder Name
-	
+  
 To organize a big number of files with different versions of rules, versioning by folder can be used.
-	
+  
 A naming pattern must be added to the `rules.xml` file, same as for the file name pattern setup or configured via OpenL Studio. The name of the folder where the files with versioned rules are stored must match the pattern.
-	
+  
 **Examples of folder naming:**
 
 ```
@@ -3647,7 +3647,7 @@ The following example demonstrates how the rounding works with the DOWN constant
 ![](ref_guide_images/5143bd39c918a379a1eb15eb20d23f9c.png)
 
 *Usage of the round(number,int,int/String) format with the DOWN rounding mode*
-	
+  
 
 ###### round(number,int,String)
 
@@ -3728,14 +3728,14 @@ In the following example, if the value for a coverage limit of an insurance poli
 *Usage of the ERROR function*
 
 Alternatively, a custom error with custom error message can be defined as arguments using the `error(String code, String message)` function. The expected REST response is as follows:
-	
+  
 ```
 {
     "code": "cd01",
     "message": "User message"
 }
 ```
-	
+  
 
 ##### Ternary Operator
 
@@ -3940,21 +3940,21 @@ The following topics are included in this section:
 The **module dependency** feature allows making a hierarchy of modules when rules of one module depend on rules of another module. As mentioned before, all modules of one project have mutual access to each other's tables. Therefore, module dependencies are intended to order them in the project if it is required for compilation purposes. Module dependencies are commonly established among modules of the same project. An exception is as follows.
 
 The following diagram illustrates a project in which the content of **Module_1** and **Module_2** depends on the content of **Module_3**, where thin black arrows are module dependencies:
-	
+  
 ![](ref_guide_images/example1.png)
-	
+  
 *Example of a project with modules hierarchy*
 
 In addition, **project dependency** enables accessing modules of other projects from the current one:
 
 ![](ref_guide_images/example2.png)
-	
+  
 *Example of a project dependency with all modules*
 
 The previous diagram displays that any module of **Project1** can execute any table of any module of **Project2**: thick gray arrow with the **All Modules** label is a project dependency with all dependency project modules included. This is equivalent to the following schema when each module of **Project1** has implicit dependency declaration to each module of **Project2**:
 
 ![](ref_guide_images/example3.png)
-	
+  
 *Interpretation of a project dependency (with all modules)*
 
 The project dependency with the **All Modules** setting switched on provides access to any module of a dependency project from the current root project.
@@ -3962,7 +3962,7 @@ The project dependency with the **All Modules** setting switched on provides acc
 Users may combine module and project dependencies if only a particular module of another project must be used. An example is as follows:
 
 ![](ref_guide_images/example4.png)
-	
+  
 *Example of a project and module dependencies combined*
 
 In the example, for defined external **Project2**, only the content of **Module2_2** is accessible from **Project1**: thick gray arrow without label is a project dependency which defines other projects where dependency module can be located.
@@ -4056,22 +4056,22 @@ The following table describes behavior of different OpenL Tablets components in 
 | Can access components in a <br/>root module from dependency.       | Yes.                                                                                                                                                                                                                                                                                                                                                                                                                                           | Yes.                                                     | Yes.                                                     |
 | Both root and dependency <br/>modules contain <br/>a similar component. | 1. Rules with the same signature and without <br/>dimension properties: duplicate exception. <br/>2. Methods with the same signature <br/>and with a number of dimension properties: <br/>wrapped by Method Dispatcher.<br/>At runtime, a method that matches the runtime<br/> context properties is executed. <br/>3. Methods with the same signature and with <br/>property active: <br/>only one table can be set to true. <br/>Appropriate validation checks <br/>this case at compilation time. | Duplicate exception.                                     | Duplicate exception.                                     |
 | None of root and dependency <br/>modules contain the component.    | **There is no such method** <br/>exception during compilation.                                                                                                                                                                                                                                                                                                                                                                                      | **There is no such data type** <br/>exception during compilation. | **There is no such field** <br/>exception during compilation. |
-	
+  
 
 ### Project Localization
-	
+  
 This section introduces project localization and describes how to enable it in the OpenL Tablets project.
-	
+  
 #### Introducing Project Localization
 
 To enable the i18n localization, the **msg(String code, Object... params)** function and new **locale** property are introduced.
-	
+  
 The **msg(String code, Object... params)** function reads localization message bundles in the i18n format. All localization bundles are stored in the OpenL Tablets project, the **i18n** folder. The name of the localization bundle matches the following pattern:
-	
+  
 `message%locale%.properties` where `%locale%` is a placeholder.
 
 Examples ordered by descending priority are as follows:
-	
+  
 -   **message_no_NO_NY.properties** – localization bundle for the Norwegian language, Norway country, Nynorsk form.
 -   **message_de_LU.properties** – localization bundle for the German language, Luxembourg country.
 -   **message_de.properties** – localization bundle for the German language.
@@ -4090,14 +4090,14 @@ To enable location in the OpenL Tablets project, proceed as follows:
 1.  In the OpenL Tablets project, create the **i18n** folder.
     
 2.  In this folder, create a default **message.properties** file with the following contents:
-    	
+      
     ```
     greetings = Hello, {0}.
     farewell = Goodbye, {0}.
     inquiry = How are you?
     
     ```
-    	
+      
     When a default message bundle is created, its messages are translated into various languages. For example, for French, the **message_fr_FR.properties** properties file is created and its contains the following lines:
 
     ```
@@ -4122,7 +4122,7 @@ To enable location in the OpenL Tablets project, proceed as follows:
 In this case, all localization messages are retrieved from **message_fr_FR.properties**. If the locale is set up for another language, for example, **uk_UA**, but the appropriate message bundle is not created, the properties are retrieved from the default file **message.properties**.
 
 **Note: **The **message.properties** file must be encoded using the [UTF-8](https://en.wikipedia.org/wiki/UTF-8) character set. Use the following tool for quick encoding: [https://native2ascii.net/](https://native2ascii.net/).
-	
+  
 ## Appendix A: BEX Language Overview
 
 This chapter provides a general overview of the BEX language that can be used in OpenL Tablets expressions.
@@ -4247,13 +4247,13 @@ The full list of OpenL Tablets operators in order of priority is as follows:
 When comparing elements of different types, such as an array and an element of the array, or different datatypes, or string and integer, a warning message is displayed. An example is as follows:
 
 `Warning: Compared elements have different types ('java.lang.String[]', 'java.lang.String'). Comparing these types always returns true. banks.bankRatings[select all having rating == "A"]`
-	
+  
 ![](ref_guide_images/EPBDS-12008.png)
 
 Suppose you're working with a list of bank ratings stored in an array and you want to select banks ratings with a value of "A". If you mistakenly compare the whole array to the single string "A", this warning can appear, indicating a mismatch in the types being compared.
-	
+  
 *Comparing elements of different types*
-	
+  
 To resolve this warning, use elements of the same type for comparison. To compare an array to an element of the array, use the `flatten` function.
 
 ![](ref_guide_images/012d51205bc592c06da145c10ae6eb74e.png)

@@ -28,10 +28,10 @@ This section includes the following topics:
 | Section                                                                                                                                                                                     | Description                                                                                                |
 |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------|
 | [Before You Begin](#before-you-begin)                                                                                                                                                      | Lists system requirements for installing and using OpenL Tablets software.                                 |
-| [Install OpenL Studio<br/> under Apache Tomcat](#install-openl-tablets-webstudio-under-apache-tomcat)                                                                                                              | Explains how to install OpenL Studio under Apache Tomcat.                                       |
-| [Deploy OpenL Rule Services<br/> under Apache Tomcat](#deploy-openl-tablets-rule-services-under-apache-tomcat)                                                                           | Designed for rule developers who need to use business rules as separate web services.                      |
-| [Install OpenL Studio and OpenL <br/>Tablets Rule Services on JBoss Application Server](#install-openl-tablets-webstudio-and-openl-tablets-rule-services-on-jboss-application-server) | Explains how to install OpenL Studio and OpenL Rule Services on JBoss Application Server. |
-| [OpenL Studio and <br/>Rule Services Integration](#openl-tablets-webstudio-and-rule-services-integration)                                                               | Explains how to set up OpenL Studio and OpenL Rule Services as an integrated environment. |
+| [Install OpenL Studio<br/> under Apache Tomcat](#install-openl-studio-under-apache-tomcat)                                                                                                              | Explains how to install OpenL Studio under Apache Tomcat.                                       |
+| [Deploy OpenL Rule Services<br/> under Apache Tomcat](#deploy-openl-rule-services-under-apache-tomcat)                                                                           | Designed for rule developers who need to use business rules as separate web services.                      |
+| [Install OpenL Studio and OpenL <br/>Tablets Rule Services on JBoss Application Server](#install-openl-studio-and-openl-rule-services-on-jboss-application-server) | Explains how to install OpenL Studio and OpenL Rule Services on JBoss Application Server. |
+| [OpenL Studio and <br/>Rule Services Integration](#openl-studio-and-rule-services-integration)                                                               | Explains how to set up OpenL Studio and OpenL Rule Services as an integrated environment. |
 | - [Troubleshooting Notes](#troubleshooting) <br/>- [Frequently Asked Questions](#frequently-asked-questions)                                                                                  | Provide useful information related to OpenL Tablets installation.                                         |
 
 ### Audience
@@ -69,7 +69,7 @@ The following styles and conventions are used in this guide:
 This section lists the system requirements for OpenL Tablets software and introduces OpenL Studio instance properties. The following topics are included:
 
 -   [System Requirements for OpenL Tablets Software](#system-requirements-for-openl-tablets-software)
--   [Common Information about OpenL Studio Instances](#common-information-about-openl-tablets-webstudio-instances)
+-   [Common Information about OpenL Studio Instances](#common-information-about-openl-studio-instances)
 
 ### System Requirements for OpenL Tablets Software
 
@@ -92,8 +92,8 @@ The following table covers system requirements for installing and running OpenL 
 
 This section provides general information about OpenL Studio home directory structure and resources shared among multiple OpenL Studio instances. The following topics are included:
 
--   [OpenLStudio Home Directory Configuration](#openl-tablets-webstudio-home-directory-configuration)
--   [Starting OpenL Studio in the Cluster Mode](#starting-openl-tablets-webstudio-in-the-cluster-mode)
+-   [OpenLStudio Home Directory Configuration](#openl-studio-home-directory-configuration)
+-   [Starting OpenL Studio in the Cluster Mode](#starting-openl-studio-in-the-cluster-mode)
 -   [Sharing webstudio.properties](#sharing-webstudioproperties)
 -   [Sharing Project History](#sharing-project-history)
 -   [Sharing Project Index](#sharing-project-index)
@@ -171,11 +171,11 @@ Perform the following steps:
 
 -   [Installing JDK](#installing-jdk)
 -   [Installing Apache Tomcat](#installing-apache-tomcat)
--   [Deploying OpenL Studio](#deploying-openl-tablets-webstudio)
+-   [Deploying OpenL Studio](#deploying-openl-studio)
 -   [Configuring External User Database](#configuring-external-user-database)
--   [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard)
+-   [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-studio-with-installation-wizard)
 -   [Integration with External Identify Providers](#integration-with-external-identity-providers)
--   [OpenL Studio Customization](#openl-tablets-webstudio-customization)
+-   [OpenL Studio Customization](#openl-studio-customization)
 
 ### Installing JDK
 
@@ -188,12 +188,12 @@ To install JDK, perform the following steps:
 	-   Download OpenJDK 21 available at <https://adoptium.net/>.
 	-   Download OpenJDK 11 or later from <https://adoptium.net/temurin/releases/> to the target directory.
 	
-    Further in the document, this catalog is referred to as `<JAVA_HOME>`.
+	Further in the document, this catalog is referred to as `<JAVA_HOME>`.
 
-    !!! note
-    	It is highly recommended to avoid installing Java in the default Program Files directory because it can cause problems due to space characters in the path to the folder.
+	!!! note
+		It is highly recommended to avoid installing Java in the default Program Files directory because it can cause problems due to space characters in the path to the folder.
 
-    For more information on the installation, see <https://adoptium.net/installation/>.
+	For more information on the installation, see <https://adoptium.net/installation/>.
 
 1. Install JDK according to the instructions.  
 	Now the environment variable `JAVA_HOME` must be set to the pathname of the directory where JDK is installed. 
@@ -208,12 +208,12 @@ To install JDK, perform the following steps:
 8. For Unix/Linux environments, assuming the target directory is `/usr/lib/jvm/jdk-21`, to set up the environment variable `JAVA_HOME` for a single user, proceed as follows:
 	9.  Log in to the account and open `.bash_profile:nano ~/.bash_profile`.
 	10. Add the following line
-        
-	    `export JAVA_HOME=/usr/lib/jvm/jdk-21`.
+		
+		`export JAVA_HOME=/usr/lib/jvm/jdk-21`.
 
 	11. Add or correct the system PATH as follows:
 	
-	    `export PATH=$PATH:$JAVA_HOME/bin`
+		`export PATH=$PATH:$JAVA_HOME/bin`
 	
 	12. To save, press **CTRL+O** and then press **CTRL+X** to exit.
 	
@@ -221,11 +221,11 @@ To install JDK, perform the following steps:
 	14. Log in as root and open the `nano /etc/profile` profile.
 	15. Add the following line:
 	
-	    `export JAVA_HOME=/usr/lib/jvm/jdk-21`.
+		`export JAVA_HOME=/usr/lib/jvm/jdk-21`.
 	
 	16. Add or correct the system PATH as follows:
 	
-	    `export PATH=$PATH:$JAVA_HOME/bin`.
+		`export PATH=$PATH:$JAVA_HOME/bin`.
 
 ### Installing Apache Tomcat
 
@@ -319,14 +319,14 @@ Proceed as follows:
 
 	Alternatively, Tomcat can be restarted from the **General** tab in the **Apache Tomcat Properties** window which appears after selecting **Start \> All Programs \> Apache Tomcat 9.0 \> Configure Tomcat**.
 
-From this point, OpenL Studio can be run as described in [Deploying OpenL Studio](#deploying-openl-tablets-webstudio).
+From this point, OpenL Studio can be run as described in [Deploying OpenL Studio](#deploying-openl-studio).
 
 #### Installing Apache Tomcat on UNIX / Linux Machine
 
 This section describes how to install Apache Tomcat on the UNIX or Linux machine and includes the following topics:
 
 -   [Installing Apache Tomcat from Repository](#installing-apache-tomcat-from-repository)
--   [Installing Apache Tomcat from ZIP File](#installing-apache-tomcat-from-zip-file_1)
+-   [Installing Apache Tomcat from ZIP File](#installing-apache-tomcat-from-zip-file)
 -   [Configuring JVM Options for Tomcat on UNIX / Linux Machine](#configuring-jvm-options-for-tomcat-on-unix-linux-machine)
 
 ##### Installing Apache Tomcat from Repository
@@ -441,7 +441,7 @@ To configure JVM options for Tomcat on a UNIX / Linux machine, proceed as follow
 
 	`<Connector port="8080" protocol="HTTP/1.1" connectionTimeout="20000" redirectPort="8443" URIEncoding="UTF-8"/>`
 
-1.  From this point, deploy OpenL Studio as described in [Deploying OpenL Studio](#deploying-openl-tablets-webstudio).
+1.  From this point, deploy OpenL Studio as described in [Deploying OpenL Studio](#deploying-openl-studio).
 
 ### Deploying OpenL Studio
 
@@ -449,8 +449,8 @@ This section describes how to deploy and run OpenL Studio under Tomcat.
 
 The following topics are included:
 
--   [Deploying OpenL Studio on a Windows Machine](#deploying-openl-tablets-webstudio-on-a-windows-machine)
--   [Deploying OpenL Studio on a Linux Machine and Mac](#deploying-openl-tablets-webstudio-on-a-linux-machine-and-mac)
+-   [Deploying OpenL Studio on a Windows Machine](#deploying-openl-studio-on-a-windows-machine)
+-   [Deploying OpenL Studio on a Linux Machine and Mac](#deploying-openl-studio-on-a-linux-machine-and-mac)
 
 #### Deploying OpenL Studio on a Windows Machine
 
@@ -478,7 +478,7 @@ Proceed as follows:
 
 	That is, for this example, the URL is *http://localhost:8080/openl-tablets-webstudio-5.9.4*.
 
-	OpenL Studio is opened in the browser on the **Welcome to Installation Wizard** page. The wizard will guide through the setup process as described in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard). When setup is complete, use OpenL Studio to create new projects or download existing ones.
+	OpenL Studio is opened in the browser on the **Welcome to Installation Wizard** page. The wizard will guide through the setup process as described in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-studio-with-installation-wizard). When setup is complete, use OpenL Studio to create new projects or download existing ones.
 
 1.  After a new release of the OpenL Studio is installed, click **CTRL**+**F5** or clear cookies and cash manually to reload the page in the browser.
 
@@ -531,7 +531,7 @@ To install OpenL Studio under Linux and Mac OS, perform the following steps:
 
 ### Configuring External User Database
 
-This step is only required if a user is planning to work in multi-user application modes such as Multi-user, Active Directory, SSO: CAS, SSO: SAML, or SSO:OAuth2. For more information, see [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard) and use an external database such as MySQL for managing users in OpenL Studio.
+This step is only required if a user is planning to work in multi-user application modes such as Multi-user, Active Directory, SSO: CAS, SSO: SAML, or SSO:OAuth2. For more information, see [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-studio-with-installation-wizard) and use an external database such as MySQL for managing users in OpenL Studio.
 
 By default, OpenL Studio can run using an internal user database based on the H2 database engine. It is a good idea to use the internal user database for demonstration purposes because it is provided by default and requires no additional setup. But in this case, all user management changes will be lost after server restart.
 
@@ -562,7 +562,7 @@ Before configuration, perform the following steps:
 	|  MS SQL     | `mssql-jdbc-12.10.0.jre11.jar`    |
 	|  PostgreSQL | `postgresql-42.7.5.jar`           |
 
-	For more information on URL value according to the database type, see the **URL value according to the database type** table in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
+	For more information on URL value according to the database type, see the **URL value according to the database type** table in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-studio-with-installation-wizard).
 
 1.  Install the database, defining login and password and creating a new schema or service.
 
@@ -623,7 +623,7 @@ This section explains how to set up a MySQL database. Proceed as follows:
 1.  Follow the wizard steps leaving the default values and clicking **Next** to proceed.
 2.  Click **Finish** to close the wizard when installation is complete.
 
-	    **Note:** It is recommended to configure the database server to use the UTF-8 character set.
+		**Note:** It is recommended to configure the database server to use the UTF-8 character set.
 
 	When MySQL is successfully installed on the user’s computer, an empty database for OpenL Studio in MySQL must be created and permissions to modify this database granted to the user from which the OpenL Studio will work with this database.
 
@@ -730,10 +730,10 @@ Proceed as follows:
 
 	For more details about how to configure the repository of a specific type, please refer to the corresponding section below:
 
-	-   [Configuring OpenL Studio via JDBC Connection](#configuring-openl-tablets-webstudio-via-jdbc-connection)
-	-   [Configuring OpenL Studio via JNDI Connection](#configuring-openl-tablets-webstudio-via-jndi-connection)
-	-   [Configuring OpenL Studio via Amazon Simple Storage Service](#configuring-openl-tablets-webstudio-via-amazon-simple-storage-service)
-	-   [Connecting to OpenL Studio via Proxy](#connecting-to-openl-tablets-webstudio-via-proxy)
+	-   [Configuring OpenL Studio via JDBC Connection](#configuring-openl-studio-via-jdbc-connection)
+	-   [Configuring OpenL Studio via JNDI Connection](#configuring-openl-studio-via-jndi-connection)
+	-   [Configuring OpenL Studio via Amazon Simple Storage Service](#configuring-openl-studio-via-amazon-simple-storage-service)
+	-   [Connecting to OpenL Studio via Proxy](#connecting-to-openl-studio-via-proxy)
 
 	For more information on repository security, see [OpenL Studio User Guide > Managing Repository Setting](#managing-repository-settings).
 
@@ -761,9 +761,9 @@ Proceed as follows:
 
 1.  Click **Finish** to complete setup.
 
-    As a result, for the **Demo, Multi-user, Active Directory**, **SSO: CAS**, **SSO: SAML,** and **SSO:OAuth2** modes, the login screen appears for entering user’s credentials to start working with OpenL Studio. If the **openl.home** registry variable is defined, upon OpenL Studio update, after replacing the war file, re-running installation wizard is not required as the fact of configuration is recorded in the system registry. However, if there are multiple instances of OpenL Studio installed on the same computer, OpenL Studio must be run via system properties.
+	As a result, for the **Demo, Multi-user, Active Directory**, **SSO: CAS**, **SSO: SAML,** and **SSO:OAuth2** modes, the login screen appears for entering user’s credentials to start working with OpenL Studio. If the **openl.home** registry variable is defined, upon OpenL Studio update, after replacing the war file, re-running installation wizard is not required as the fact of configuration is recorded in the system registry. However, if there are multiple instances of OpenL Studio installed on the same computer, OpenL Studio must be run via system properties.
 
-    For a list of users predefined in the **Demo** application mode, see [OpenL Studio User Guide > Managing Users](https://openldocs.readthedocs.io/en/latest/documentation/guides/webstudio_user_guide/#managing-users).
+	For a list of users predefined in the **Demo** application mode, see [OpenL Studio User Guide > Managing Users](https://openldocs.readthedocs.io/en/latest/documentation/guides/webstudio_user_guide/#managing-users).
 
 #### Configuring OpenL Studio via JDBC Connection
 
@@ -781,7 +781,7 @@ Configure design and deployment repositories settings on the second step of Open
 To configure the OpenL Studio via JNDI connection, perform the following steps:
 
 -   [Configuring Resources for JNDI Context](#configuring-resources-for-jndi-context)
--   [Configuring Settings in OpenL Studio](#configuring-settings-in-openl-tablets-webstudio)
+-   [Configuring Settings in OpenL Studio](#configuring-settings-in-openl-studio)
 
 ##### Configuring Resources for JNDI Context
 
@@ -793,39 +793,39 @@ Resource settings must be configured before deploying the application. Proceed a
 
 	```
 	<Resource name=”jdbc/oracleJNDI” auth=”Container”
-		    type=”javax.sql.DataSource” username=”user” password=”password”
-		    driverClassName=”oracle.jdbc.OracleDriver” 
-		    url=”jdbc:oracle:thin:@localhost:1521:orcl”
-		    maxActive=”8”    
-		    /> 
+			type=”javax.sql.DataSource” username=”user” password=”password”
+			driverClassName=”oracle.jdbc.OracleDriver” 
+			url=”jdbc:oracle:thin:@localhost:1521:orcl”
+			maxActive=”8”    
+			/> 
 	```
 
 	`For the MySQL database, an example is as follows:`
 
 	```
 	<Resource name=”jdbc/mysqlJNDI” auth=”Container” type=”javax.sql.DataSource”
-		       maxActive=”100” maxIdle=”30” maxWait=”10000”
-		       username=”javauser” password=”javadude” driverClassName=”com.mysql.jdbc.Driver”
-		       url=”jdbc:mysql://localhost:3306/javatest”
-		       />
+			   maxActive=”100” maxIdle=”30” maxWait=”10000”
+			   username=”javauser” password=”javadude” driverClassName=”com.mysql.jdbc.Driver”
+			   url=”jdbc:mysql://localhost:3306/javatest”
+			   />
 	```
 
 	`For the MS SQL database, an example is as follows:`
 
 	```
 	<Resource name=”jdbc/mssqlJNDI” auth=”Container”
-		    type=”javax.sql.DataSource” username=”wally” password=”wally”
-		    driverClassName=”com.microsoft.sqlserver.jdbc.SQLServerDriver” 
-		    url=”jdbc:sqlserver://localhost;DatabaseName=mytest;SelectMethod=cursor;”
-		    maxActive=”8” 
-		    />
+			type=”javax.sql.DataSource” username=”wally” password=”wally”
+			driverClassName=”com.microsoft.sqlserver.jdbc.SQLServerDriver” 
+			url=”jdbc:sqlserver://localhost;DatabaseName=mytest;SelectMethod=cursor;”
+			maxActive=”8” 
+			/>
 	For the PostrgeSQL database, an example is as follows:
 	<Resource name=”jdbc/postgres” auth=”Container”
-		    type=”javax.sql.DataSource” username=”postgres” password=”Password1”
-		    driverClassName=”org.postgresql.Driver” 
-		    url=”jdbc:postgresql://localhost:5432/postgres”
-		    maxActive=”8” 
-		    />
+			type=”javax.sql.DataSource” username=”postgres” password=”Password1”
+			driverClassName=”org.postgresql.Driver” 
+			url=”jdbc:postgresql://localhost:5432/postgres”
+			maxActive=”8” 
+			/>
 	```
 
 1.  Save the `context.xml` file.
@@ -886,7 +886,7 @@ OpenL Studio allows selecting where user permissions are managed in the case of 
 1.  Provide at least one user to be granted administration privileges in the **Administrators** field.
 2.  Select the **All authenticated users have View access** check box to grant viewer privileges by default.
 
-    ![](installation_guide_images/d00e1e24ed69010d2edabcfa8b742a4b.png)
+	![](installation_guide_images/d00e1e24ed69010d2edabcfa8b742a4b.png)
 
 	*Configuring initial users*
 
@@ -968,14 +968,14 @@ SAML configuration on Azure Kubernetes includes the following steps:
 URLs must be accessible by Azure.
 
 -   To specify the Azure metadata URL in the OpenL Studio, search for **App Federation Metadata URL** in the Azure SAML Signing certificate.
-    
-    Username, first name, last name, group, and other attributes can also be retrieved from App Federation Metadata XML.
-    
+	
+	Username, first name, last name, group, and other attributes can also be retrieved from App Federation Metadata XML.
+	
 -   Build the image with the required JDBC driver.
 
 OpenL Studio stores information about users and their groups in the database, so there must be a remote database server when OpenL Studio is used in Kubernetes.
 
-In Kubernetes, application configuration is described in the configuration map and installer must not be used. For an example of the configuration, see [Appendix B: OpenL Studio Image Configuration for SAML Under Kubernetes](#appendix-b-openl-tablets-webstudio-image-configuration-for-saml-under-kubernetes).
+In Kubernetes, application configuration is described in the configuration map and installer must not be used. For an example of the configuration, see [Appendix B: OpenL Studio Image Configuration for SAML Under Kubernetes](#appendix-b-openl-studio-image-configuration-for-saml-under-kubernetes).
 
 #### Configuring Single Sign On via OAuth2
 
@@ -1016,7 +1016,7 @@ This section describes additional configuration for OpenL Studio and includes th
 -   [Configuring Private Key for Repository Security](#configuring-private-key-for-repository-security)
 -   [Configuring User for Migration](#configuring-user-for-migration)
 
-The changes described in this section can be made in the properties file as described in [OpenL Studio Home Directory Configuration](#openl-tablets-webstudio-home-directory-configuration).
+The changes described in this section can be made in the properties file as described in [OpenL Studio Home Directory Configuration](#openl-studio-home-directory-configuration).
 
 #### Updating User Database Configuration
 
@@ -1030,7 +1030,7 @@ db.password = myPassword
 
 #### Configuring User Mode
 
-Normally, user mode in OpenL Studio is set to **multi-user** by using OpenL Studio Installation Wizard as described in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
+Normally, user mode in OpenL Studio is set to **multi-user** by using OpenL Studio Installation Wizard as described in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-studio-with-installation-wizard).
 
 User mode can also be changed as a JVM option for Tomcat. For that, open the **Apache Tomcat Properties** dialog as described in [Installing Apache Tomcat Using Windows Service Installer](#installing-apache-tomcat-using-windows-service-installer), and in the **Java Options** text box, add the following line:
 
@@ -1088,11 +1088,11 @@ The folder where Tomcat is installed is referred to as `<TOMCAT_HOME>.`
 
 `This section contains the following topics:`
 
--   [Downloading Preconfigured OpenL Rule Services](#downloading-preconfigured-openl-tablets-rule-services)
--   [Configuring OpenL Rule Services for a Local Data Source](#configuring-openl-tablets-rule-services-for-a-local-data-source)
--   [Configuring OpenL Rule Services for a Database Data Source](#configuring-openl-tablets-rule-services-for-a-database-data-source)
--   [Configuring OpenL Rule Services via AWS S3 Connection](#configuring-openl-tablets-rule-services-via-aws-s3-connection)
--   [Configuring OpenL Rule Services via GIT Connection](#configuring-openl-tablets-rule-services-via-git-connection)
+-   [Downloading Preconfigured OpenL Rule Services](#downloading-preconfigured-openl-rule-services)
+-   [Configuring OpenL Rule Services for a Local Data Source](#configuring-openl-rule-services-for-a-local-data-source)
+-   [Configuring OpenL Rule Services for a Database Data Source](#configuring-openl-rule-services-for-a-database-data-source)
+-   [Configuring OpenL Rule Services via AWS S3 Connection](#configuring-openl-rule-services-via-aws-s3-connection)
+-   [Configuring OpenL Rule Services via GIT Connection](#configuring-openl-rule-services-via-git-connection)
 
 ### Downloading Preconfigured OpenL Rule Services
 
@@ -1106,9 +1106,9 @@ To download the preconfigured OpenL Rule Services application in a WAR file, pro
 
 This section describes how to configure settings for a local storage with deployed projects there. The following topics are included:
 
--   [Configuring OpenL Rule Services via Local File System](#configuring-openl-tablets-rule-services-via-local-file-system)
--   [Configuring OpenL Rule Services via Local ZIP Archives](#configuring-openl-tablets-rule-services-via-local-zip-archives)
--   [Configuring OpenL Rule Services via Classpath JAR](#configuring-openl-tablets-rule-services-via-classpath-jar)
+-   [Configuring OpenL Rule Services via Local File System](#configuring-openl-rule-services-via-local-file-system)
+-   [Configuring OpenL Rule Services via Local ZIP Archives](#configuring-openl-rule-services-via-local-zip-archives)
+-   [Configuring OpenL Rule Services via Classpath JAR](#configuring-openl-rule-services-via-classpath-jar)
 
 #### Configuring OpenL Rule Services via Local File System
 
@@ -1184,11 +1184,11 @@ Alternatively, zip archives with deployments or rule projects can be saved to `\
 
 This section describes how to configure settings to connect to a database for storing deployed projects there. Such configuration requires that the appropriate database exists and is launched. The following topics are included:
 
--   [Configuring OpenL Rule Services via JDBC Connection](#configuring-openl-tablets-rule-services-via-jdbc-connection)
--   [Configuring OpenL Rule Services via JNDI Connection](#configuring-openl-tablets-rule-services-via-jndi-connection)
--   [Configuring OpenL Rule Services via AWS S3 Connection](#configuring-openl-tablets-rule-services-via-aws-s3-connection)
--   [Configuring OpenL Rule Services via GIT Connection](#configuring-openl-tablets-rule-services-via-git-connection)
--   [Configuring OpenL Rule Services via Azure Blob Connection](#configuring-openl-tablets-rule-services-via-azure-blob-connection)
+-   [Configuring OpenL Rule Services via JDBC Connection](#configuring-openl-rule-services-via-jdbc-connection)
+-   [Configuring OpenL Rule Services via JNDI Connection](#configuring-openl-rule-services-via-jndi-connection)
+-   [Configuring OpenL Rule Services via AWS S3 Connection](#configuring-openl-rule-services-via-aws-s3-connection)
+-   [Configuring OpenL Rule Services via GIT Connection](#configuring-openl-rule-services-via-git-connection)
+-   [Configuring OpenL Rule Services via Azure Blob Connection](#configuring-openl-rule-services-via-azure-blob-connection)
 
 Before configuration, add the appropriate driver library for a database in OpenL Rule Services to `\WEB-INF\lib\.`Alternatively, locate required libraries directly in `\<TOMCAT_HOME>\lib` with other Tomcat libraries. Install the database, defining a login and password and creating a new schema or service.
 
@@ -1206,7 +1206,7 @@ To set up JDBC connection settings for OpenL Rule Services, proceed as follows:
 	production-repository.uri = jdbc:mysql://localhost/deployment-repository
 	```
 
-1.  Set the URL value for `production-repository.uri` according to the appropriate database as described in the **URL value according to the database type** table in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
+1.  Set the URL value for `production-repository.uri` according to the appropriate database as described in the **URL value according to the database type** table in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-studio-with-installation-wizard).
 2.  Set the login `production-repository.login `and password `production-repository.password `for connection to the database defined while installing the database.
 
 	The password must be encoded via the Base64 encoding schema when `secret.key` is also defined.
@@ -1225,9 +1225,9 @@ To configure OpenL Rule Services via JNDI connection, proceed as follows:
 	production-repository.uri = java:comp/env/jdbc/deploymentDB
 	```
 
-1.  Change the URL value for `production-repository.uri` according to the appropriate database as described in the **URL value according to the database type** table in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
+1.  Change the URL value for `production-repository.uri` according to the appropriate database as described in the **URL value according to the database type** table in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-studio-with-installation-wizard).
 
-    !!! note
+	!!! note
 		Login and password are not required for definition inside the `application.properties` file while configuring JNDI settings.
 
 ### Configuring OpenL Rule Services via AWS S3 Connection
@@ -1270,8 +1270,8 @@ This section explains how to install OpenL Studio and OpenL Rule Services on JBo
 
 The following topics are included:
 
--   [Deploying OpenL tudio on JBoss Application Server](#deploying-openl-tablets-webstudio-on-jboss-application-server)
--   [Deploying OpenL Rule Services on JBoss Application Server](#deploying-openl-tablets-rule-services-on-jboss-application-server)
+-   [Deploying OpenL tudio on JBoss Application Server](#deploying-openl-studio-on-jboss-application-server)
+-   [Deploying OpenL Rule Services on JBoss Application Server](#deploying-openl-rule-services-on-jboss-application-server)
 -   [Setting Up a JDBC Connection](#setting-up-a-jdbc-connection)
 -   [Setting Up a JNDI Connection](#setting-up-a-jndi-connection)
 
@@ -1332,7 +1332,7 @@ To set up a JDBC connection for OpenL Studio, proceed as follows:
 
 	For example, if the `application.properties` file is located in JBoss home directory, JBoss must be run from this directory via the `bin\standalone.bat` command.
 
-1.  Configure a JDBC connection for OpenL Studio as described in [Configuring OpenL Studio via JDBC Connection](#configuring-openl-tablets-webstudio-via-jdbc-connection).
+1.  Configure a JDBC connection for OpenL Studio as described in [Configuring OpenL Studio via JDBC Connection](#configuring-openl-studio-via-jdbc-connection).
 
 ### Setting Up a JNDI Connection
 
@@ -1368,14 +1368,14 @@ To set up a JNDI connection settings for OpenL Studio, proceed as follows:
 
 	`production-repository.uri = <JNDI Name>`
 
-1.  Configure a JNDI connection for OpenL Studio as described in [Configuring Settings in OpenL Studio](#configuring-settings-in-openl-tablets-webstudio).
+1.  Configure a JNDI connection for OpenL Studio as described in [Configuring Settings in OpenL Studio](#configuring-settings-in-openl-studio).
 
 ## OpenL Studio and Rule Services Integration
 
 This section describes how to set up OpenL Studio and OpenL Rule Services integration and enable backward compatibility and includes the following topics:
 
 -   [Deploying Rules to the Production Server](#deploying-rules-to-the-production-server)
--   [Integrating OpenL Studio and OpenL Rule Services via Database Repository](#integrating-openl-tablets-webstudio-and-openl-tablets-rule-services-via-database-repository)
+-   [Integrating OpenL Studio and OpenL Rule Services via Database Repository](#integrating-openl-studio-and-openl-rule-services-via-database-repository)
 
 ### Deploying Rules to the Production Server
 
@@ -1396,8 +1396,8 @@ After integration any changes can be made in user’s rule in OpenL Studio, and 
 This section describes an alternative way of how to set up an integrated environment that enables work with business rules from OpenL Studio and launch these rules as OpenL Rule Services. To set up OpenL Studio and OpenL Rule Services integration using the database as storage for deployment repository, proceed as follows:
 
 1.  Install OpenL Studio and OpenL Rule Services on the same application server.
-2.  Connect OpenL Studio to the database to store deployed projects as described in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-tablets-webstudio-with-installation-wizard).
-3.  Configure OpenL Rule Services for a database data source as described in [Configuring OpenL Rule Services for a Database Data Source](#configuring-openl-tablets-rule-services-for-a-database-data-source).
+2.  Connect OpenL Studio to the database to store deployed projects as described in [Setting Up OpenL Studio with Installation Wizard](#setting-up-openl-studio-with-installation-wizard).
+3.  Configure OpenL Rule Services for a database data source as described in [Configuring OpenL Rule Services for a Database Data Source](#configuring-openl-rule-services-for-a-database-data-source).
 
 ## Troubleshooting
 
@@ -1468,67 +1468,67 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app: webstudio
+	matchLabels:
+	  app: webstudio
   serviceName: webstudio
   template:
-    metadata:
-      labels:
-        app: webstudio
-    spec:
-      containers:
-        - name: webstudio
-          image: openltablets/webstudio:latest
-          resources:
-            limits:
-              memory: "32768Mi"
-            requests:
-              memory: "1024Mi"
-          ports:
-            - containerPort: 8080
-          readinessProbe:
-            tcpSocket:
-              port: 8080
-            initialDelaySeconds: 30
-            periodSeconds: 60
-          livenessProbe:
-            tcpSocket:
-              port: 8080
-            initialDelaySeconds: 60
-            periodSeconds: 120
-          env:
-            - name: WEBSTUDIO_CONFIGURED
-              value: "true"
-            - name: DB_URL
-              value: "jdbc:postgresql://dbserver:5432/studio_db"
-            - name: DB_USER
-              value: "pgadmin@studio"
-            - name: DB_PASSWORD
-              value: "Pa$$w0rd"
-            - name: USER_MODE
-              value: "saml"
-            - name: SECURITY_SAML_ENTITY-ID
-              value: "webstudio"
-            - name: SECURITY_SAML_SAML-SERVER-METADATA-URL
-              value: "https://saml-idp-server/path/to/metadata"
-            - name: SECURITY_ADMINISTRATORS
-              value: "mylogin@example.com"
-            - name: SECURITY_SAML_SERVER-CERTIFICATE
-              value: "BASE64 encoded public key (optional)"
-            - name: SECURITY_SAML_ATTRIBUTE_FIRST-NAME
-              value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"
-            - name: SECURITY_SAML_ATTRIBUTE_LAST-NAME
-              value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"
-            - name: SECURITY_SAML_ATTRIBUTE_DISPLAY-NAME
-              value: "http://schemas.microsoft.com/identity/claims/displayname"
-            - name: SECURITY_SAML_ATTRIBUTE_EMAIL
-              value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
-            - name: SECURITY_SAML_ATTRIBUTE_GROUPS
-              value: "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
-            - name: USER_MODE
-              value: "saml"
-      imagePullSecrets:
-        - name: regcreds
+	metadata:
+	  labels:
+		app: webstudio
+	spec:
+	  containers:
+		- name: webstudio
+		  image: openltablets/webstudio:latest
+		  resources:
+			limits:
+			  memory: "32768Mi"
+			requests:
+			  memory: "1024Mi"
+		  ports:
+			- containerPort: 8080
+		  readinessProbe:
+			tcpSocket:
+			  port: 8080
+			initialDelaySeconds: 30
+			periodSeconds: 60
+		  livenessProbe:
+			tcpSocket:
+			  port: 8080
+			initialDelaySeconds: 60
+			periodSeconds: 120
+		  env:
+			- name: WEBSTUDIO_CONFIGURED
+			  value: "true"
+			- name: DB_URL
+			  value: "jdbc:postgresql://dbserver:5432/studio_db"
+			- name: DB_USER
+			  value: "pgadmin@studio"
+			- name: DB_PASSWORD
+			  value: "Pa$$w0rd"
+			- name: USER_MODE
+			  value: "saml"
+			- name: SECURITY_SAML_ENTITY-ID
+			  value: "webstudio"
+			- name: SECURITY_SAML_SAML-SERVER-METADATA-URL
+			  value: "https://saml-idp-server/path/to/metadata"
+			- name: SECURITY_ADMINISTRATORS
+			  value: "mylogin@example.com"
+			- name: SECURITY_SAML_SERVER-CERTIFICATE
+			  value: "BASE64 encoded public key (optional)"
+			- name: SECURITY_SAML_ATTRIBUTE_FIRST-NAME
+			  value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname"
+			- name: SECURITY_SAML_ATTRIBUTE_LAST-NAME
+			  value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname"
+			- name: SECURITY_SAML_ATTRIBUTE_DISPLAY-NAME
+			  value: "http://schemas.microsoft.com/identity/claims/displayname"
+			- name: SECURITY_SAML_ATTRIBUTE_EMAIL
+			  value: "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress"
+			- name: SECURITY_SAML_ATTRIBUTE_GROUPS
+			  value: "http://schemas.microsoft.com/ws/2008/06/identity/claims/role"
+			- name: USER_MODE
+			  value: "saml"
+	  imagePullSecrets:
+		- name: regcreds
 ```
 
 ## Appendix C: CORS Filter Support Enablement in <br/>OpenL Studio

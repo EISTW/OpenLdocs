@@ -27,11 +27,11 @@ Basic knowledge of Java, Apache Tomcat, Ant, Maven, and Excel is required to use
 |---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------|
 | [Introduction](#introduction)                                                                                                  | Provides overall information about OpenL Rule Services.                                                                      |
 | [Rule Services Core](#rule-services-core)                                                                                       | Introduces Rule Services Core functionality.                                                                                        |
-| [OpenL Rule Services Configuration](#openl-tablets-rule-services-configuration)                                                              | Describes the default configuration of OpenL Rule Services, introduces Service <br/>Manager, and explains main configuration points. |
-| [OpenL Rule Services Advanced Configuration and Customization](#openl-tablets-rule-services-advanced-configuration-and-customization)                                 | Describes OpenL Rule Services advanced services configuration and customization.                                             |
+| [OpenL Rule Services Configuration](#openl-rule-services-configuration)                                                              | Describes the default configuration of OpenL Rule Services, introduces Service <br/>Manager, and explains main configuration points. |
+| [OpenL Rule Services Advanced Configuration and Customization](#openl-rule-services-advanced-configuration-and-customization)                                 | Describes OpenL Rule Services advanced services configuration and customization.                                             |
 | [Appendix A: Tips and Tricks](#appendix-a-using-openl-tablets-rest-services-from-java-code)                                     | Describes how to use OpenL Rule Services from Java code.                                                                     |
-| [Appendix B: Projects on the OpenL Rule Services Launch](#appendix-b-projects-on-the-openl-tablets-rule-services-launch)                                       | Explains how projects appear upon OpenL Rule Services launch.                                                                |
-| [Appendix C: Types of Exceptions in OpenL Rule Services](#appendix-c-types-of-exceptions-in-openl-tablets-rule-services) | Explains typical exceptions in OpenL Rule Services.                                                                          |
+| [Appendix B: Projects on the OpenL Rule Services Launch](#appendix-b-projects-on-the-openl-rule-services-launch)                                       | Explains how projects appear upon OpenL Rule Services launch.                                                                |
+| [Appendix C: Types of Exceptions in OpenL Rule Services](#appendix-c-types-of-exceptions-in-openl-rule-services) | Explains typical exceptions in OpenL Rule Services.                                                                          |
 | [Appendix D: OpenAPI Support](#appendix-d-openapi-support)                                                                            | Explains Swagger support in OpenL Tablets.                                                                                          |
 | [Appendix E: Programmatically Deploying Rules to a Repository](#appendix-e-programmatically-deploying-rules-to-a-repository)    | Describes how to locate a project with rules in the database repository <br/>without OpenL Studio deploy functionality.      |
 | [Appendix F: Backward Compatibility Settings](#appendix-f-backward-compatibility-settings)                                      | Describes backward compatibility settings.                                                                                          |
@@ -168,8 +168,8 @@ OpenL Rule Services architecture allows extending mechanisms of services loading
 
 This section describes OpenL Rule Services configuration and includes the following topics:
 
--   [OpenL Rule Services Default Configuration](#openl-tablets-rule-services-default-configuration)
--   [OpenL Rule Services Default Configuration Files](#openl-tablets-rule-services-default-configuration-files)
+-   [OpenL Rule Services Default Configuration](#openl-rule-services-default-configuration)
+-   [OpenL Rule Services Default Configuration Files](#openl-rule-services-default-configuration-files)
 -   [Service Manager](#service-manager)
 -   [Configuration Points](#configuration-points)
 
@@ -236,7 +236,7 @@ The following sections describe how to configure these components:
 -   [Service Exposing Methods](#service-exposing-methods)
 -   [Configuring System Settings](#configuring-system-settings)
 -   [CORS Filter Support](#cors-filter-support)
--   [Logging Requests to OpenL Rule Services and Their Responds in a Storage](#logging-requests-to-openl-tablets-rule-services-and-their-responds-in-a-storage)
+-   [Logging Requests to OpenL Rule Services and Their Responds in a Storage](#logging-requests-to-openl-rule-services-and-their-responds-in-a-storage)
 
     **Note:** There is a specific rule of parsing parameter names in methods. The algorithm checks the case of the second letter in a word and sets the first letter case the same as for the second letter. For example, parameters for `MyMethod (String fParam, String Sparam)` in REST requests are defined as `FParam` and `sparam`.
 
@@ -287,7 +287,7 @@ To use a relational database repository as a data source, proceed as follows:
 5.  Set login and password for a connection to the database in production-repository.login and production-repository.password settings.
 
     **Note:**        The password must be encoded via Base64 encoding schema if the repository.encode.decode.key property is not empty. 
-	
+    
     ```properties
     production-repository.factory = repo-jdbc
     production-repository.uri = jdbc:h2:mem:repo;DB_CLOSE_DELAY=-1
@@ -313,7 +313,7 @@ To use an AWS S3 repository as a data source, proceed as follows:
         <packaging>war</packaging>
         <version>1.0-beta</version>
 
-	<properties>
+    <properties>
             <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
             <org.openl.version>#Define OpenL Tablets version here#</org.openl.version>
         </properties>
@@ -363,13 +363,13 @@ To use an AWS S3 repository as a data source, proceed as follows:
     production-repository.secret-key = yourSecretKey
     ```
   
-	
+    
 ##### GIT
 
 To use a Git repository as a data source, proceed as follows:
 
 1.  To build a customized version of OpenL Rule Services with dependencies on `*org.openl.rules.repository.git`, create a `pom.xml` file with the following content:
-	
+    
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
     <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
@@ -500,7 +500,7 @@ When deploying a project to OpenL Rule Services, if the rules-deploy.xml file is
 | url                               | Defines URL for a service.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       | No                  |
 | annotationTemplateClassName       | Defines an interface being used as a template to annotate dynamic generated interface class.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | No                  |
 | groups                            | Defines a list of comma-separated groups used for this project.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | No                  |
-| publishers                        | Defines a list of publishers for a project. <br/>Available values are as follows: <br/>- [RESTFUL](#_CXF_REST_Publisher) <br/>- [RMI](#rmi-publisher) <br/>- [KAFKA](#kafka-publisher) <br/>If the publisher list is empty, the service is deployed as a Java object without network API defined. <br/>This can be useful if deploying multiple projects in one deployment <br/>where some of these projects must not define the network API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | No                  |
+| publishers                        | Defines a list of publishers for a project. <br/>Available values are as follows: <br/>- [RESTFUL](#cxf-rest-publisher) <br/>- [RMI](#rmi-publisher) <br/>- [KAFKA](#kafka-publisher) <br/>If the publisher list is empty, the service is deployed as a Java object without network API defined. <br/>This can be useful if deploying multiple projects in one deployment <br/>where some of these projects must not define the network API.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             | No                  |
 | configuration                     | Is used as extension point for custom service configuration.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     | No                  |
 | jackson.serializationInclusion    | Serialization option for JSON based services.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    | No                  |
 | jackson.defaultDateFormat         | Used to define date format is used in JSON.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      | No                  |
@@ -1128,12 +1128,12 @@ As a result, the following table with the default openl_log_data name is created
 
 This section describes OpenL Rule Services advanced services configuration and customization and explains the following:
 
--   [OpenL Rule Services Customization Algorithm](#openl-tablets-rule-services-customization-algorithm)
+-   [OpenL Rule Services Customization Algorithm](#openl-rule-services-customization-algorithm)
 -   [Data Source Listeners](#data-source-listeners)
 -   [Service Publishing Listeners](#service-publishing-listeners)
 -   [Dynamic Interface Support](#dynamic-interface-support)
 -   [Service Customization through Annotations](#service-customization-through-annotations)
--   [Customization of Log Requests to OpenL Rule Services and Their Responds in a Storage](#customization-of-log-requests-to-openl-tablets-rule-services-and-their-responds-in-a-storage)
+-   [Customization of Log Requests to OpenL Rule Services and Their Responds in a Storage](#customization-of-log-requests-to-openl-rule-services-and-their-responds-in-a-storage)
 
 ### OpenL Rule Services Customization Algorithm
 
