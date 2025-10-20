@@ -1786,7 +1786,7 @@ This chapter describes tasks that can be performed in repository editor. For gen
 The following topics are included in this chapter:
 
 -   [Browsing Design Repository](#browsing-design-repository)
--   [Filtering the Project Tree](#filtering-the-project-tree)
+-   [Filtering and Grouping the Project Tree](#filtering-and-grouping-the-project-tree)
 -   [Creating Projects in Design Repository](#creating-projects-in-design-repository)
 -   [Opening a Project](#opening-a-project)
 -   [Closing a Project](#closing-a-project)
@@ -1825,7 +1825,7 @@ The status of each project in the tree is identified by a specific icon. The fol
 | ![](webstudio_guide_images/2c331509e4c7655949ad8055eb387d98.png) | Project exists only in user's workspace but not in Design repository (Local). Other users do not see this project. <Br/>User can delete the project or import it into Design repository as described in the [Creating Projects in Design Repository](#creating-projects-in-design-repository).                                                                                                                                                                                                                                                                                                             |
 | ![](webstudio_guide_images/4d37af564602b82442d8138a551c3229.png) | Project is marked for deletion. In OpenL Studio, deletion of a project takes place in the following phases: <br/>- Deleting a project: Project is removed from user's workspace and marked for deletion. <br/>In this phase, the project can be restored using the undelete function. <br/>For information on deleting a project, see [Deleting a Project](#deleting-a-project). <br/><br/>- Erasing a project: Deleted project is permanently removed from Design repository. <Br/>After this phase, the project cannot be restored. <br/>For information on erasing a project, see [Erasing a Project](#erasing-a-project). |
 
-### Filtering the Project Tree
+### Filtering and Grouping the Project Tree
 
 Projects in the repository editor are filtered the same way as in Rules Editor.
 
@@ -3576,3 +3576,4 @@ Internal API documentation for OpenL Studio is available at <http://localhost:80
 Release 5.27
 OpenL Tablets Documentation is licensed under a Creative Commons Attribution 3.0 United States License. 
 ```
+
