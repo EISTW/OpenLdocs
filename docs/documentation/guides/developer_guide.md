@@ -256,11 +256,11 @@ When working with a large project that, for example, includes huge amounts of te
 ```
 <modules>
   <module>
-    <name>Tests</name>
-    <rules-root path="rules/Test*.xlsx"/>
-    <webstudioConfiguration>
-      <compileThisModuleOnly>true</compileThisModuleOnly>
-    </webstudioConfiguration>
+	<name>Tests</name>
+	<rules-root path="rules/Test*.xlsx"/>
+	<webstudioConfiguration>
+	  <compileThisModuleOnly>true</compileThisModuleOnly>
+	</webstudioConfiguration>
   </module>
 </modules>
 ```
@@ -302,7 +302,7 @@ Firstly, an OpenL Tablets project must be created. It can be done in the followi
 See the following sections for detailed information:
 
 -   [Creating a Project Using the Maven Archetype](#creating-a-project-using-the-maven-archetype)
--   [Creating a Project in OpenL Studio](#creating-a-project-in-openl-tablets-webstudio)
+-   [Creating a Project in OpenL Studio](#creating-a-project-in-openl-studio)
 -   [Creating a Project Manually](#creating-a-project-manually)
 -   [Editing Rules](#editing-rules)
 -   [Using OpenL Tablets Rules from Java Code](#using-openl-tablets-rules-from-java-code)
@@ -409,8 +409,8 @@ public static void callRulesWithGeneratedInterface(){
 new RulesEngineFactory<Object>("TemplateRules.xls");
 				//Creates new instance of dynamic Java Wrapper for our lesson
 Object rules = rulesFactory.newInstance();
-        
-       //Get current hour
+		
+	   //Get current hour
 	Calendar = Calendar.getInstance();
 	int hour = calendar.get(Calendar.HOUR_OF_DAY);
 
@@ -478,8 +478,8 @@ public class ExampleOfUsingRuntimeContext {
 			RulesEngineFactory<simple> rulesFactory = new RulesEngineFactory<Simple>("TemplateRules.xls", Simple.class);
 			Simple rules = (Simple) rulesFactory.newInstance();
 			// Getting runtime environment which contains context 
-	        	IRuntimeEnv env = ((IEngineWrapper) rules).getRuntimeEnv();
-	        	// Creating context (most probably in future, the code will be different)
+				IRuntimeEnv env = ((IEngineWrapper) rules).getRuntimeEnv();
+				// Creating context (most probably in future, the code will be different)
 			IRulesRuntimeContext context = RulesRuntimeContextFactory. buildRulesRuntimeContext();			env.setContext(context);
 			context.setLob("Home");
 			rules.hello1(12);
@@ -505,8 +505,8 @@ If a static interface must be used, the interface must be specified in SimplePro
 
 ```
 SimpleProjectEngineFactory<SayHello> simpleProjectEngineFactory = new SimpleProjectEngineFactoryBuilder<SayHello>().setProject<project location>)
-                .setInterfaceClass(SayHello.class)
-                .build();
+				.setInterfaceClass(SayHello.class)
+				.build();
 SayHello instance = simpleProjectEngineFactory.newInstance();
 ```
 
@@ -550,29 +550,29 @@ To generate an interface for rules and datatype classes defined in the MS Excel 
 <build>
   [...]
   <plugins>
-      [...]
-      <plugin>
-          <groupId>org.openl.rules</groupId>
-          <artifactId>openl-maven-plugin</artifactId>
-          <version>${openl.rules.version}</version>
-          <configuration>
-              <generateInterfaces>
-                  <generateInterface>
-                      <srcFile>src/main/openl/rules/TemplateRules.xls</srcFile>
-                      <targetClass>
-                        org.company.gen.TemplateRulesInterface
-                      </targetClass>
-                  </generateInterface>
-              </generateInterfaces>
-          </configuration>
-          <executions>
-              <execution>
-                  <goals>
-                      <goal>generate</goal>
-                  </goals>
-              </execution>
-          </executions>
-      </plugin>
+	  [...]
+	  <plugin>
+		  <groupId>org.openl.rules</groupId>
+		  <artifactId>openl-maven-plugin</artifactId>
+		  <version>${openl.rules.version}</version>
+		  <configuration>
+			  <generateInterfaces>
+				  <generateInterface>
+					  <srcFile>src/main/openl/rules/TemplateRules.xls</srcFile>
+					  <targetClass>
+						org.company.gen.TemplateRulesInterface
+					  </targetClass>
+				  </generateInterface>
+			  </generateInterfaces>
+		  </configuration>
+		  <executions>
+			  <execution>
+				  <goals>
+					  <goal>generate</goal>
+				  </goals>
+			  </execution>
+		  </executions>
+	  </plugin>
 
   </plugins>
   [...]
@@ -1012,7 +1012,7 @@ The found method is executed in runtime. So, to override binary operator **t1 OP
 	The last part of the type name is the name of the method to be implemented.
 1.  Use one of the following options available for implementing operators:
 	-   Put it into the YourCustomOperators class as a static method and register the class as a library in the org.openl.operators namespace
-	    For more information on how to do that, see OpenLBuilder code.
+		For more information on how to do that, see OpenLBuilder code.
 	-   Implement **public Tx name(T2 p2)** as method in T1.
 	-   Implement **Tx name(T1 p1,T2 p2) as** method in T1.
 	-   Implement **static public Tx name(T1 p1,T2 p2)** as method in T2.
@@ -1161,7 +1161,7 @@ OpenL Tablets loads properties from the `application.property` files to the foll
 -   `classpath:config/`
 -   `classpath:`
 
-    **Note:** The list is ordered by precedence, that is, properties defined in locations higher in the list override those defined in lower locations.
+	**Note:** The list is ordered by precedence, that is, properties defined in locations higher in the list override those defined in lower locations.
 
 OpenL Tablets supports the `{appName}.properties` alias of the `application.property` file, where `{appName}` is the application name of the running application context.
 
@@ -1182,7 +1182,7 @@ If several profiles are specified in the `spring.profile.active` property, the e
 -   `application-dev-openl.properties`
 -   `application.properties`
 
-    **Note:** The list ordered is ordered by precedence, that is, properties defined in locations higher in the list override those defined in lower locations)
+	**Note:** The list ordered is ordered by precedence, that is, properties defined in locations higher in the list override those defined in lower locations)
 
 ## Extending OpenL Tablets Functionality
 If the added classes have the `valueOf(String)` or `parse(CharSequence)` methods defined, method values can be declared in the cells directly, and no conversion is required. An example of an added class is as follows.

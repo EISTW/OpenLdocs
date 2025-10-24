@@ -40,9 +40,9 @@ The following styles and conventions are used in this guide:
 
 This chapter introduces main OpenL Studio concepts. The following topics are included in this chapter:
 
--   [What Is OpenL Studio?](#what-is-openl-tablets-webstudio)
--   [Working with Projects in OpenL Studio](#working-with-projects-in-openl-tablets-webstudio)
--   [OpenL Studio Components](#openl-tablets-webstudio-components)
+-   [What Is OpenL Studio?](#what-is-openl-studio)
+-   [Working with Projects in OpenL Studio](#working-with-projects-in-openl-studio)
+-   [OpenL Studio Components](#openl-studio-components)
 -   [Security Overview](#security-overview)
 
 ### What Is OpenL Studio?
@@ -81,7 +81,7 @@ OpenL Studio consists of the following main components:
 
 | Component                        | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 |----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Rules Editor                     | Graphic user interface running in a web browser allowing users to browse rule modules, modify table data, and run tests. <br/>Rule project configurations are browsed and updated there as well. <br/><br/>Rules Editor is the default user interface displayed when a user opens OpenL Studio. <br/>Rules Editor does not display all rule module files but provides a logical view of rules stored in a module. <br/>This view is convenient for users who modify business rules. <br/><br/>Rules Editor displays only modules available in projects stored in the user's workspace. <br/>To retrieve a project to the user's workspace, open the project as described in [Working with Projects in OpenL Studio](#working-with-projects-in-openl-tablets-webstudio). <br/>For more information on using Rules Editor, see [Using Rules Editor](#using-rules-editor). |
+| Rules Editor                     | Graphic user interface running in a web browser allowing users to browse rule modules, modify table data, and run tests. <br/>Rule project configurations are browsed and updated there as well. <br/><br/>Rules Editor is the default user interface displayed when a user opens OpenL Studio. <br/>Rules Editor does not display all rule module files but provides a logical view of rules stored in a module. <br/>This view is convenient for users who modify business rules. <br/><br/>Rules Editor displays only modules available in projects stored in the user's workspace. <br/>To retrieve a project to the user's workspace, open the project as described in [Working with Projects in OpenL Studio](#working-with-projects-in-openl-studio). <br/>For more information on using Rules Editor, see [Using Rules Editor](#using-rules-editor). |
 | Repository editor                | Graphic user interface running in a web browser allowing users to browse and manage projects in Design repository. <br/>Unlike Rules Editor, repository editor displays physical contents of rule projects. <br/>Users can easily switch between Rules Editor and repository editor in user interface. <br/><br/>Repository editor provides the following main functions: <br/>- uploading projects from the file system to Design repository <br/>- editing, saving, opening, and closing projects <br/>- modifying project structure and properties managing project revisions <br/>- copying and deleting projects in Design repository <br/>- managing and tracing deploy configurations <br/>For more information on using repository editor, see [Using Repository Editor](#using-repository-editor).                                                                                                 |
 | Design repository                | Centralized storage of rule projects accessible by all OpenL Studio users. <br/><br/>Projects uploaded to Design repository are visible to other users. <br/>Design repository creates a separate project revision each time a project is saved. <Br/>Any project revision can be opened.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
 | Deploy configurations <br/>repository | Centralized storage of final rule projects to be delivered to the production environment where solution applications use them. <Br/>Projects can be deployed to deployment repository from Design repository using deploy configurations. <br/>**Deploy configuration** is a specific OpenL Studio project type. <br/>It identifies rule projects and project revisions to be deployed to deployment repository. <br/>Deploy configurations are saved and versioned so that developers can identify which specific rule project revisions are deployed.                                                                                                                                                                                                                                                                                                   |
@@ -106,10 +106,10 @@ OpenL Studio supports the following user modes:
 
 This chapter explains logging into OpenL Studio and briefly introduces the user interface. The following topics are included in this chapter:
 
--   [Signing In to OpenL Studio](#signing-in-to-openl-tablets-webstudio)
+-   [Signing In to OpenL Studio](#signing-in-to-openl-studio)
 -   [Modifying User Profile](#modifying-user-profile)
--   [Displaying the OpenL Studio Help](#displaying-the-openl-tablets-webstudio-help)
--   [Signing Out of OpenL Studio](#signing-out-of-openl-tablets-webstudio)
+-   [Displaying the OpenL Studio Help](#displaying-the-openl-studio-help)
+-   [Signing Out of OpenL Studio](#signing-out-of-openl-studio)
 -   [Introducing Rules Editor](#introducing-rules-editor)
 -   [Introducing Repository Editor](#introducing-repository-editor)
 
@@ -340,7 +340,7 @@ For more information on tasks that can be performed in repository editor, see [U
 
 ## Using Rules Editor
 
-This chapter describes basic tasks that can be performed in Rules Editor. For more information on Rules Editor, see [Introducing Rules Editor](#_Introducing_Rules_Editor).
+This chapter describes basic tasks that can be performed in Rules Editor. For more information on Rules Editor, see [Introducing Rules Editor](#introducing-rules-editor).
 
 The following topics are included in this chapter:
 
@@ -1847,7 +1847,7 @@ OpenL Studio allows users to create new rule projects in the Design repository i
 
 | Way                                        | Section                                                                       |
 |--------------------------------------------|-------------------------------------------------------------------------------|
-| Create a rule project from a template      | [Creating a Project from Template](#creating-a-project)                     |
+| Create a rule project from a template      | [Creating a Project from Template](#creating-a-project-from-template)                     |
 | Create a rule project from Excel files     | [Creating a Project from Excel Files](#creating-a-project-from-excel-files)   |
 | Create a rule project from an OpenAPI file | [Creating a Project from OpenAPI file](#creating-a-project-from-openapi-file) |
 | Create a rule project from a zip archive   | [Creating a Project from ZIP Archive](#creating-a-project-from-zip-archive) |
@@ -2774,7 +2774,7 @@ The **Common** tab defines the following general OpenL Studio settings:
 
 -   [Managing User Workspace Settings](#managing-user-workspace-settings)
 -   [Managing History Settings](#managing-history-settings)
--   [Managing Other OpenL Studio Settings](#managing-other-openl-tablets-webstudio-settings)
+-   [Managing Other OpenL Studio Settings](#managing-other-openl-studio-settings)
 
 #### Managing User Workspace Settings
 
