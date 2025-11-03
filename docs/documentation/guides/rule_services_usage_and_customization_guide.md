@@ -414,8 +414,6 @@ To use a Git repository as a data source, proceed as follows:
     
     ```xml
     properties
-    # Local path for Git repository.
-    production-repository.local-repository-path = ${ruleservice.openl.home}/git
     # The branch where deployed projects can be found.
     production-repository.branch = master
     # Committer's display name. If null, username will be “OpenL_Deployer”.
